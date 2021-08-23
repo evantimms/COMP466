@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resume>
+    <title>Evan Timms</title>
+    <subtitle>Software Engineer</subtitle>
+    <section>
+        <subtitle>Education</subtitle>
+        <point>University of Alberta - Computer Engineering</point>
+    </section>
+    <section>
+        <subtitle>Experience</subtitle>
+        <point>ML Engineer Intern</point>
+        <point>RBC</point>
+        <point>Toronto, Ontario CA</point>
+        <point>Rewriting kafka ingestion process for application designed to scan and flag potentially fraudulent transactions for over ~16 million clients.</point>
+        <subtitle>Experience</subtitle>
+        <point>Backend Engineer Intern</point>
+        <point>Enverus</point>
+        <point>Austin, Texas US</point>
+        <point>Built a consumable permissions microservice in Typescript backed by a Redis cache to fetch user permissions from Azure CosmosDB.</point>
+        <subtitle>Experience</subtitle>
+        <point>Fullstack Engineer Intern</point>
+        <point>RS Energy</point>
+        <point>Calgary, Alberta CA</point>
+        <point>Created an interactive documentation tool which encrypts and stores confidential client presentations using Quill.js, Node.js streams API and Microsoft Azure’s Blob Storage. Currently used by over 200 clients across North America.</point>
+    </section>
+    <section>
+        <subtitle>Projects</subtitle>
+        <point>BUber - CMPUT 301 Project. Ride sharing Android application developed with 5 other students written in Java.</point>
+        <point>PhotoScryber - Hacakthon Project. Ride sharing Android application developed with 5 other students written in Java.</point>
+    </section>
+</resume>
