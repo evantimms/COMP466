@@ -1,11 +1,81 @@
-.main {
-
+html, body {
+    height: 100%;
+    background-color: rgb(240, 240, 240);
 }
 
-.content {
+body {
+    margin: 0;
+}
 
+.main {
+    height: 100%;
 }
 
 .navbar {
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    background-color: #04AA6D;
+    padding: 2px 5px;
+    box-shadow: 4px 5px 8px #cecece;
+    margin-bottom: 5px;
+    color: rgb(240, 240, 240);
+}
+
+.navbar .title {
+    font-size: 20px;
+}
+
+.navbar .links .link {
+    font-size: 16px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+}
+
+.link.active {
+    color: rgb(190, 190, 190);
+}
+
+.navbar .links .link:hover {
+    color: rgb(190, 190, 190);
+}
+
+.documentation-divider {
+    width: 90%;
+    height: 1px;
+    background-color: rgb(139, 139, 139);
+    margin: 40px 0;
+    align-self: center;
+}
+
+.content {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.documentation {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.documentation .documentation-title {
+    font-size: 20px;
+    margin: 7px 5px;
+    align-self: center;
+}
+
+.documentation-section {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+.documentation-section .documentation-subtitle {
+    font-weight: 600;
 }
