@@ -1,0 +1,14 @@
+.module {
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px;
+    align-items: start;
+}
+
+.quiz-info {
+    display: flex;
+    height: 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 130px;
+}

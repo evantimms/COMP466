@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xml" href="resume.xsl" ?>
 <resume>
-    <title>Evan Timms</title>
-    <subtitle>Software Engineer</subtitle>
+    <resume-title>Evan Timms</resume-title>
+    <resume-subtitle>Software Engineer</resume-subtitle>
     <section>
         <subtitle>Education</subtitle>
         <point>University of Alberta - Computer Engineering</point>
     </section>
     <section>
         <subtitle>Experience</subtitle>
-        <point>ML Engineer Intern</point>
-        <point>RBC</point>
-        <point>Toronto, Ontario CA</point>
-        <point>Rewriting kafka ingestion process for application designed to scan and flag potentially fraudulent transactions for over ~16 million clients.</point>
-        <subtitle>Experience</subtitle>
-        <point>Backend Engineer Intern</point>
-        <point>Enverus</point>
-        <point>Austin, Texas US</point>
-        <point>Built a consumable permissions microservice in Typescript backed by a Redis cache to fetch user permissions from Azure CosmosDB.</point>
-        <subtitle>Experience</subtitle>
-        <point>Fullstack Engineer Intern</point>
-        <point>RS Energy</point>
-        <point>Calgary, Alberta CA</point>
-        <point>Created an interactive documentation tool which encrypts and stores confidential client presentations using Quill.js, Node.js streams API and Microsoft Azure’s Blob Storage. Currently used by over 200 clients across North America.</point>
+        <job>
+            <job-subtitle>RBC</job-subtitle>
+            <job-point>ML Engineer Intern</job-point>
+            <job-point>Toronto, Ontario CA</job-point>
+            <job-point>Rewriting kafka ingestion process for application designed to scan and flag potentially fraudulent transactions for over ~16 million clients.</job-point>
+        </job>
+        <job>
+            <job-subtitle>Enverus</job-subtitle>
+            <job-point>Backend Engineer Intern</job-point>
+            <job-point>Austin, Texas US</job-point>
+            <job-point>Built a consumable permissions microservice in Typescript backed by a Redis cache to fetch user permissions from Azure CosmosDB.</job-point>
+        </job>
+        <job>
+            <job-subtitle>RS Energy</job-subtitle>
+            <job-point>Fullstack Engineer Intern</job-point>
+            <job-point>RS Energy</job-point>
+            <job-point>Calgary, Alberta CA</job-point>
+            <job-point>Created an interactive documentation tool which encrypts and stores confidential client presentations using Quill.js, Node.js streams API and Microsoft Azure’s Blob Storage. Currently used by over 200 clients across North America.</job-point>
+        </job>    
     </section>
     <section>
         <subtitle>Projects</subtitle>

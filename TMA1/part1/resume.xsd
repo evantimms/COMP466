@@ -1,0 +1,53 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="value-of">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="select" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="for-each">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="li" minOccurs="0"/>
+        <xs:element ref="div" minOccurs="0"/>
+        <xs:element ref="p" minOccurs="0"/>
+        <xs:element name="if" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="for-each">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="div"/>
+                    <xs:element ref="ul"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="select"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="test"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="select" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stylesheet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="template">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="html"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="match"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:float" name="version"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attribute name="version" type="xs:float"/>
+</xs:schema>

@@ -1,0 +1,37 @@
+.resume {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.resume-title {
+    font-size: 24px;
+    align-self: center;
+}
+
+.resume-subtitle {
+    font-size: 20px;
+    align-self: center;
+}
+
+.subtitle {
+    font-weight: 600;
+    font-size: 18px;
+    align-self: center;
+}
+
+.point {
+    align-self: center;
+}
+
+.job-subtitle {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.job-list {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
