@@ -1,83 +1,83 @@
 {
     "images": [
         {
-            "path": "./1.jpg",
+            "path": "1.jpg",
             "caption": "Train Station"
         },
         {
-            "path": "./2.jpg",
+            "path": "2.jpg",
             "caption": "Under Construction"
         },
         {
-            "path": "./3.jpg",
+            "path": "3.jpg",
             "caption": "Taxi Cab"
         },
         {
-            "path": "./4.jpg",
+            "path": "4.jpg",
             "caption": "Train Tracks"
         },
         {
-            "path": "./5.jpg",
+            "path": "5.jpg",
             "caption": "Calgary Skyline"
         },
         {
-            "path": "./6.jpg",
+            "path": "6.jpg",
             "caption": "Under Construction Part 2"
         },
         {
-            "path": "./7.jpg",
+            "path": "7.jpg",
             "caption": "Road at Night"
         },
         {
-            "path": "./8.jpg",
+            "path": "8.jpg",
             "caption": "Road at Night 2"
         },
         {
-            "path": "./9.jpg",
+            "path": "9.jpg",
             "caption": "Purple Chair"
         },
         {
-            "path": "./10.jpg",
+            "path": "10.jpg",
             "caption": "Early Morning"
         },
         {
-            "path": "./11.jpg",
+            "path": "11.jpg",
             "caption": "Bars"
         },
         {
-            "path": "./12.jpg",
+            "path": "12.jpg",
             "caption": "Wood Poles"
         },
         {
-            "path": "./13.jpg",
+            "path": "13.jpg",
             "caption": "Mountains in Fernie"
         },
         {
-            "path": "./14.jpg",
+            "path": "14.jpg",
             "caption": "Mountains in Fernie 2"
         },
         {
-            "path": "./15.jpg",
+            "path": "15.jpg",
             "caption": "Landscape"
         },
         {
-            "path": "./16.jpg",
+            "path": "16.jpg",
             "caption": "Small Tree, Big Outdoors"
         },
         {
-            "path": "./17.jpg",
+            "path": "17.jpg",
             "caption": "Mountains in Fernie 3"
         },
         {
-            "path": "./18.jpg",
+            "path": "18.jpg",
             "caption": "Waterfall"
         },
         {
-            "path": "./19.jpg",
+            "path": "19.jpg",
             "caption": "Waterfall Fast Capture"
         },
         {
-            "path": "./20.jpg",
+            "path": "20.jpg",
             "caption": "Up the Tree"
         }
     ]

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../shared/main.css">
     <link rel="stylesheet" href="./part3.css">
+    <script type="text/javascript" src="./part3.js"></script>
     <title>Assignment 1</title>
 </head>
 <body>
@@ -23,12 +24,21 @@
         <div class="content">
             <div class="slideshow-application">
                 <h2>Slideshow Application</h2>
-                <canvas class="slideshow-container" width="900" height="600">
+                <div class="slideshow-transition-selector">
+                    <label for="transitions">Choose a transition:</label>
+                    <select id='transition-selector' name="transitions">
+                        <option value="none">None</option>
+                        <option value="fade">Fade</option>
+                        <option value="slide">Slide</option>
+                    </select>
+                </div>
+                <canvas id='canvas' class="slideshow-container" width="900" height="600">
                     Your browser does not support Canvas
                 </canvas>
+                <div id="caption"></div>
                 <div class="slideshow-controls">
-                    <button>Next</button>
-                    <button>Previous</button>
+                    <button value='previous'>Previous</button>
+                    <button value='next'>Next</button>
                 </div>
             </div>
         </div>
