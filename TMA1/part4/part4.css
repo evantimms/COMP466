@@ -1,0 +1,21 @@
+#type-selector {
+    margin-bottom: 10px;
+}
+
+.converter-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+#convert-submit {
+    margin-left: 10px;
+}
+
+#mortage-submit {
+    margin-top: 10px;
+}
+
+#mortage-answer {
+    margin-top: 10px;
+}

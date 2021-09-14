@@ -1,0 +1,178 @@
+const PAGES = ['converter', 'mortgage', 'income']
+let selected = 'converter'
+let selectedType = 'weight'
+
+RATIOS = {
+    'lb-kg': 0.453592,
+    'kg-lb': 2.20462,
+    'cm-m': 0.1,
+    'cm-km': 0.00001,
+    'm-cm': 10,
+    'm-km': 0.001,
+    'km-cm': 10000,
+    'km-m': 1000,
+    'cm-in': 0.393701,
+    'cm-ft': 0.0328084,
+    'cm-miles': 0.00000621371,
+    'm-in': 39.3701,
+    'm-ft': 3.28084,
+    'm-miles': 0.000621371,
+    'km-in': 39370.1,
+    'km-ft': 3280.84,
+    'km-miles': 0.621371,
+    'in-ft': 0.0833333,
+    'in-miles': 0.000157828,
+    'ft-in': 12,
+    'ft-miles': 0.000189394,
+    'miles-in': 63360,
+    'miles-ft': 5280,
+    'in-cm': 2.54,
+    'in-m': 0.0254,
+    'in-km': 0.0000254,
+    'ft-cm': 30.48,
+    'ft-m': 0.3048,
+    'ft-km': 0.0003048,
+    'miles-cm': 160934,
+    'miles-m': 1609.34,
+    'miles-km': 1.60934
+}
+
+FEDERAL_RATES = [
+    [0, 0.15],
+    [49000, 0.205],
+    [53939, 0.26],
+    [64533, 0.29],
+    [216511, 0.33]
+]
+
+BC = [
+    [0, 0.0506],
+    [42000, 0.077],
+    [54500, 0.105],
+    [75257, 0.1229],
+    [117000, 0.1229],
+    [158977, 0.147]
+]
+
+PRARIES = [
+    [0, 0.10],
+    [131220, 0.12],
+    [157464, 0.]
+12% on the next $26,244, +
+13% on the next $52,488, +
+14% on the next $104,976, +
+15% on the amount over $314,928
+]
+
+ONTARIO = [
+
+]
+
+QUEBEC = [
+
+]
+
+MARITIMES = [
+
+]
+
+NORTHERN_PROVINCES = [
+
+]
+
+function calculateMortage () {
+    principle = parseInt(document.querySelector('#principle').value)
+    interest = parseFloat(document.querySelector('#interest').value) * 0.001
+    repaymentPeriods = parseInt(document.querySelector('#periods').value) * 12
+    answerBox = document.querySelector('#mortage-answer')
+
+
+    monthlyPayment = principle * ((interest * Math.pow((1 + interest), repaymentPeriods)) / (Math.pow((1 + interest), repaymentPeriods) - 1))
+    answerBox.innerHTML = `Monthly Payment: $${monthlyPayment.toFixed(2 )}`
+}
+
+function convert () {
+    value = document.querySelector('#original')?.value
+    originalUnit = document.querySelector('#original-unit-select')?.value
+    convertUnit = document.querySelector('#convert-unit-select')?.value
+    answerBox = document.querySelector('#convert-answer')
+
+    if (value && value >= 0) {
+        if (originalUnit === convertUnit) {
+            answerBox.innerHTML = `Answer: ${parseFloat(value)} ${convertUnit}`
+        } else {
+            let key, ratio
+            let newValue
+            if (originalUnit.includes('^2')) {
+                key = `${originalUnit.slice(0, -2)}-${convertUnit.slice(0, -2)}`
+                ratio = RATIOS[key]
+                side = Math.sqrt(value)
+                convertedSide = side * ratio
+                newValue = Math.pow(convertedSide, 2)
+            } else if (originalUnit.includes('^3')) {
+                key = `${originalUnit.slice(0, -2)}-${convertUnit.slice(0, -2)}`
+                ratio = RATIOS[key]
+                side = Math.cbrt(value)
+                convertedSide = side * ratio
+                newValue = Math.pow(convertedSide, 3)
+            } else {
+                newValue = value * ratio
+            }
+            
+            answerBox.innerHTML = `Answer: ${parseFloat(newValue).toFixed(5)} ${convertUnit}`
+        }
+    } else {
+        alert('Please enter a value')
+    }
+}
+
+function onNewTypeSelect () {
+    selectedType = document.querySelector('#type-selector').value
+    document.querySelector('#convert-answer').innerHTML = 'Answer: '
+    document.querySelectorAll('.option').forEach(option => {
+        if (!option.classList.contains(selectedType)) {
+            option.hidden = true
+        } else {
+            document.querySelector('#original-unit-select').value = option.value
+            document.querySelector('#convert-unit-select').value = option.value
+            option.hidden = false
+        }
+    })
+}
+
+function setup () {
+    document.querySelectorAll('.module').forEach(mod => {
+        if (!mod.classList.contains('converter')) {
+            mod.style.display = 'None'
+        } 
+    })
+    
+    document.querySelectorAll('.sublink').forEach(el => {
+        el.addEventListener('click', () => {
+            document.querySelectorAll('.sublink').forEach(other => other.classList.remove('active'))
+
+            el.classList.forEach(classname => {
+                if (PAGES.includes(classname)) {
+                    el.classList.add('active')
+                    selected = classname
+                }
+            })
+
+            document.querySelectorAll('.module').forEach(mod => {
+                if (mod.classList.contains(selected)) {
+                    mod.style.display = ''
+                } else {
+                    mod.style.display = 'None'
+                }
+            })
+
+        })
+    })
+
+    // Set up events for converter
+    document.querySelector('#type-selector').addEventListener('change', onNewTypeSelect)
+    document.querySelector('#convert-submit').addEventListener('click', convert)
+    document.querySelector('#mortage-submit').addEventListener('click', calculateMortage)
+}
+
+window.addEventListener('load', setup, false);
