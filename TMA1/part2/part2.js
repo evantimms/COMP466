@@ -1,4 +1,4 @@
-let selected = 'unit2'
+let selected = 'quiz1'
 let unitPage = 0
 
 QUIZ_1_ANS = [
@@ -21,11 +21,11 @@ QUIZ_2_ANS = [
 
 QUIZ_3_ANS = [
     'a',
+    'a',
     'b',
     'c',
     'c',
-    'a',
-    'b'
+    'a'
 ]
 
 function movePage (pageNumber) {
@@ -140,7 +140,7 @@ function fetchPage () {
 
     req = new XMLHttpRequest()
     req.addEventListener('load', responseHandler)
-    req.open('GET', `sections/${selected}.html`)
+    req.open('GET', `sections/${selected}.xml`)
     req.send()
 }
 
