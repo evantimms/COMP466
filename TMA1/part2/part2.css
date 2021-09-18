@@ -1,8 +1,15 @@
 .module {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 0 50px;
-    align-items: start;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
 }
 
 .quiz-info {

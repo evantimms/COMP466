@@ -1,0 +1,61 @@
+<div class="module converter">
+    <h2>Measurement Converter</h2>
+    <select id="type-selector" value="weight">
+        <option value="weight">Weight</option>
+        <option value="length">Length</option>
+        <option value="area">Area</option>
+        <option value="volume">Volume</option>
+    </select>
+    <div class="converter-container">
+        <form>
+            <label for="original">Enter Measurement: </label>
+            <input type="text" id="original" name="original">
+            <select id="original-unit-select" name="original-unit">
+                <option class="option weight" value="kg">kg</option>
+                <option class="option weight" value="lb">lb</option>
+                <option class="option length" hidden value="cm">cm</option>
+                <option class="option length" hidden value="m">m</option>
+                <option class="option length" hidden value="km">km</option>
+                <option class="option length" hidden value="in">in</option>
+                <option class="option length" hidden value="ft">ft</option>
+                <option class="option length" hidden value="miles">miles</option>
+                <option class="option area" hidden value="cm^2">cm^2</option>
+                <option class="option area" hidden value="m^2">m^2</option>
+                <option class="option area" hidden value="km^2">km^2</option>
+                <option class="option area" hidden value="in^2">in^2</option>
+                <option class="option area" hidden value="ft^2">ft^2</option>
+                <option class="option area" hidden value="miles^2">miles^2</option>
+                <option class="option volume" hidden value="cm^3">cm^3</option>
+                <option class="option volume" hidden value="m^3">m^3</option>
+                <option class="option volume" hidden value="km^3">km^3</option>
+                <option class="option volume" hidden value="in^3">in^3</option>
+                <option class="option volume" hidden value="ft^3">ft^3</option>
+                <option class="option volume" hidden value="miles^3">miles^3</option>
+            </select>
+            <label for="convert-unit">Convert to: </label>
+            <select id="convert-unit-select" name="convert-unit">
+                <option class="option weight" value="kg">kg</option>
+                <option class="option weight" value="lb">lb</option>
+                <option class="option length" hidden value="cm">cm</option>
+                <option class="option length" hidden value="m">m</option>
+                <option class="option length" hidden value="km">km</option>
+                <option class="option length" hidden value="in">in</option>
+                <option class="option length" hidden value="ft">ft</option>
+                <option class="option length" hidden value="miles">miles</option>
+                <option class="option area" hidden value="cm^2">cm^2</option>
+                <option class="option area" hidden value="m^2">m^2</option>
+                <option class="option area" hidden value="km^2">km^2</option>
+                <option class="option area" hidden value="in^2">in^2</option>
+                <option class="option area" hidden value="ft^2">ft^2</option>
+                <option class="option area" hidden value="miles^2">miles^2</option>
+                <option class="option volume" hidden value="cm^3">cm^3</option>
+                <option class="option volume" hidden value="m^3">m^3</option>
+                <option class="option volume" hidden value="km^3">km^3</option>
+                <option class="option volume" hidden value="in^3">in^3</option>
+                <option class="option volume" hidden value="ft^3">ft^3</option>
+                <option class="option volume" hidden value="miles^3">miles^3</option>
+            </select>
+        </form>
+    </div>
+    <div id="convert-answer">Answer:</div>
+</div>
