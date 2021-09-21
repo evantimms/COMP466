@@ -1,4 +1,4 @@
-let selected = 'quiz1'
+let selected = 'intro'
 let unitPage = 0
 
 QUIZ_1_ANS = [
@@ -71,8 +71,14 @@ function setupQuiz (guide) {
         if (q1 && q2 && q3 && q4 && q5 && q6) {
             let correct = 0
             answers.forEach((answer, idx) => {
+                const correctionBox = document.querySelector(`#correction-q${idx + 1}`)
                 if (answer === guide[idx]) {
-                    correct ++
+                    correct++
+                    correctionBox.innerHTML = 'Correct.'
+                    correctionBox.style.color = 'green'
+                } else {
+                    correctionBox.innerHTML = `Incorrect, correct answer is ${guide[idx]}`
+                    correctionBox.style.color = 'red'
                 }
             })
             alert('You scored ' + correct + ' out of 6')
@@ -85,6 +91,9 @@ function setupQuiz (guide) {
         document.querySelectorAll('input:checked').forEach(el => {
             el.checked = false
         })
+        for (let i = 1; i <= 6; ++i) {
+            document.querySelector(`#correction-q${i}`).innerHTML = ''
+        }
         alert('Quiz Reset')
     })
 }
@@ -140,7 +149,7 @@ function fetchPage () {
 
     req = new XMLHttpRequest()
     req.addEventListener('load', responseHandler)
-    req.open('GET', `sections/${selected}.xml`)
+    req.open('GET', `sections/${selected}.html`)
     req.send()
 }
 

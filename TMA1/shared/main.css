@@ -5,6 +5,7 @@ html, body {
 
 body {
     margin: 0;
+    font-family: 'Roboto Slab', sans-serif;
 }
 
 .main {
@@ -21,8 +22,8 @@ body {
     background-color: #04AA6D;
     padding: 2px 5px;
     box-shadow: 4px 5px 8px #cecece;
-    margin-bottom: 5px;
     color: rgb(240, 240, 240);
+    padding: 5px 15px;
 }
 
 .sub-nav {
@@ -37,6 +38,7 @@ body {
     margin-top: -5px;
     box-shadow: 4px 5px 8px #cecece;
     color: rgb(240, 240, 240);
+    padding: 5px 15px;
 }
 
 .title {
@@ -48,6 +50,7 @@ body {
     color: rgb(240, 240, 240);
     text-decoration: none;
     cursor: pointer;
+    margin: 0 5px;
 }
 
 .links .link.active {
@@ -84,6 +87,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 80%;
+    align-self: center;
 }
 
 .documentation .documentation-title {

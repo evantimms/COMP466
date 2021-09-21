@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="shared/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <title>Assignment 1</title>
 </head>
 <body>
     <div class="main">
         <div class="navbar">
-            <div class="title">Home</div>
+            <div class="title">COMP 466 Assignment 1</div>
             <div class="links">
                 <a class="link" href="part1/">Part 1</a>
                 <a class="link" href="part2/">Part 2</a>
@@ -28,15 +29,29 @@
                 <span class="documentation-divider"></span>
                 <div class="documentation-section">
                     <div class="documentation-subtitle">Description</div>
-                    <p>Assignment description.</p>
+                    <p>
+                        In this assignment, 4 different web applications were developed. A resume, built by parsing XML, a web learning module, a slideshow and an utility application.
+                        In part 1, XML is parsed via an XSL file. In part 2, a small web development course teaches basic concepts in HTML, CSS, JS, AJAX and XML. In part 3 there is a slideshow application
+                        of various photos. Finally, in part 4 there is a utility application which allows users to calculate mortages, income after tax and convert various measurements.
+                    </p>
                 </div>
                 <div class="documentation-section">
                     <div class="documentation-subtitle">Design</div>
-                    <p>Assignment design.</p>
-                </div>
+                    <p>
+                        The design of this assignment started with a web application which contains all 4 parts. A top navbar is used to quickly navigate between applications. In part 1, XSL and XSD are used to render
+                        a XML resume. In part 2, the web development modules are loaded via XmlHttpRequests. In part 2, there is also a sub navbar which allows navigation between all 4 units. In part 3, JavaScript functions to 
+                        both check the type of transition, and then apply the proper transitions through manipulation of the images.
+                    </p>
+                        Finally, in part, the cacluations run off of 'change' events which occur when selection boxes are modified. This allows on-the-fly updating. 
+                        Various input checking is done so that invalid calculations do not occur.
+                    </p>
                 <div class="documentation-section">
                     <div class="documentation-subtitle">User Guide</div>
-                    <p>Assignment design.</p>
+                    <p>To access each of the applications, use the top navbar. For the web learning application, navigate with the secondary navbar.</p>
+                    <p>
+                        In part 3, the dropdown will allow you to select the type of transtion. In part 4, again the secondary navbar can be used to navigate.
+                        Selecting different items from the dropdown and editing the inputs will allow you do modify values for calcultions.
+                    </p>
                 </div>
             </div>
         </div>

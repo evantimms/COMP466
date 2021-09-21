@@ -33,24 +33,25 @@ function transitionWithSlide (image, context, canvas) {
 }
 
 function transitionImage () {
+    let selectedData = {}
     request = new XMLHttpRequest();
     request.overrideMimeType("application/json");
     request.open('GET', './data/mapping.json', true);
     request.onreadystatechange = () => {
         if (request.readyState == 4 && request.status == '200') {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            data = JSON.parse(request.responseText)
+            data = JSON.parse(request.responseText).images
 
             if (!images.length) {
                 for (i = 0; i < 20; ++i) {
-                    selectedData = data['images'][i]
+                    selectedData = data[i]
                     img = new Image()
                     img.src = `./data/${selectedData['path']}`
                     images.push(img)
                 }
             }
 
-            caption = document.querySelector('#caption').innerHTML = `(${currentPhotoIdx + 1}/20)${selectedData['caption']}`
+            caption = data[currentPhotoIdx].caption
             canvas = document.querySelector('#canvas')
             context = canvas.getContext('2d')
             context.clearRect(0, 0, canvas.width, canvas.height);
@@ -59,6 +60,7 @@ function transitionImage () {
             switch (currentTransition) {
                 case 'None':
                     context.drawImage(image, 0, 0, canvas.width, canvas.height)
+
                     break
                 case 'fade':
                     transitionWithFade(image, context)
@@ -67,6 +69,8 @@ function transitionImage () {
                     transitionWithSlide(image, context, canvas)
                     break
             }
+
+            document.querySelector('#caption').innerText = caption
         }
   }
   request.send(null)
