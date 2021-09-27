@@ -1,0 +1,46 @@
+.bookmark-service {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+
+.user-add-bookmark {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #04AA6D;
+    padding: 20px 30px;
+    margin-top: 20px;
+    box-shadow: 4px 5px 8px #cecece;
+    height: 100px;
+}
+
+.user-add-bookmark div {
+    margin: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.user-add-bookmark button {
+    color: white;
+    background-color: rgb(73, 73, 73);
+    font-weight: 600;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 18px;
+    list-style-type: none;
+}
