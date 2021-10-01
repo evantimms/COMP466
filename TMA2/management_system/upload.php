@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="shared/main.css">
+    <link rel="stylesheet" href="../shared/main.css">
     <link rel="stylesheet" href="ms.css">
+    <script type="text/javascript" src="js/upload.js"></script>
     <title>Assignment 2</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
                 <h2>Upload a New Course</h2>
                 <div><i>Courses should be a single EML file. View the EML structure in the documentation section.</i></div>
                 <div class="file-upload">
-                    <input type="file">
+                    <input type="file" id="file-upload-file">
                     <input type="button" value="Upload" id="file-upload-submit">
                 </div>
             </div>

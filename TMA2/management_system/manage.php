@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../shared/main.css">
     <link rel="stylesheet" href="ms.css">
+    <script type="text/javascript" src="js/manage.js"></script>
     <title>Assignment 2</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
                 <h2>Manage Courses</h2>
                 <div><i>Click on a course to view it. Clicking on a course will load a seperate window.</i></div>
                 <ul class="course-list">
-                    <li class="course-manager">
+                    <!-- <li class="course-manager">
                         <h4>Course 1</h4>
                         <div class="course-controls">
                             <button id="assign-user">Assign to User</button>
@@ -49,7 +50,7 @@
                             </select>
                             <button id="delete">Delete</button>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

@@ -21,11 +21,11 @@
         </div>
         <div class="content">
             <div class="documentation">
-                <div class="documentation-title">Evan Timms (3380938) - COMP 466</div>
-                <div class="documentation-title">Assignment 1</div>
-                <div class="documentation-title">Begin Date: 9/22/2021</div>
+                <div class="documentation-title">Evan Timms - COMP 466</div>
+                <div class="documentation-title">Assignment 2</div>
+                <div class="documentation-title">Begin Date: 9/26/2021</div>
                 <div class="documentation-title">End Date: 10/01/2021</div>
-                <div class="documentation-title">Est Hours: 20</div>
+                <div class="documentation-title">Est Hours: 25</div>
                 <span class="documentation-divider"></span>
                 <div class="documentation-section">
                     <div class="documentation-subtitle">Description</div>

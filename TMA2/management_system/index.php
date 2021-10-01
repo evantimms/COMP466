@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../shared/main.css">
     <link rel="stylesheet" href="ms.css">
-    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <title>Assignment 2</title>
 </head>
 <body>

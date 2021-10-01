@@ -15,9 +15,9 @@
         <div class="navbar">
             <div class="title">COMP 466 Assignment 2</div>
             <div class="links">
-                <a class="link" href="bookmark_service/">Bookmark Service</a>
-                <a class="link" href="management_system/">Management System</a>
-                <a class="link" href="shared/logout.php">Logout</a>
+                <a class="link" href="../../bookmark_service/">Bookmark Service</a>
+                <a class="link" href="../">Management System</a>
+                <a class="link" href="../../shared/logout.php">Logout</a>
             </div>
         </div>
         <?php

@@ -29,6 +29,6 @@ CREATE TABLE assigned_users (
   course_id int NOT NULL,
   user_id int NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES users(id),
-  FOREIGN KEY (course_id) REFERENCES courses(id)
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE
 );

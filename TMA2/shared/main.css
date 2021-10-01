@@ -18,8 +18,8 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 40px;
-    background-color: #04AA6D;
+    height: 60px;
+    background-color: #1087d6;
     padding: 2px 5px;
     box-shadow: 4px 5px 8px #cecece;
     color: rgb(240, 240, 240);
@@ -114,7 +114,7 @@ body {
     margin-top: 60px;
     display: flex;
     justify-content: center;
-    background-color: #04AA6D;
+    background-color: #1087d6;
     box-shadow: 4px 5px 8px #cecece;
     border-radius: 6px;
 }
