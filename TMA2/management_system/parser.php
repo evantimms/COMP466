@@ -44,13 +44,15 @@
     function buildUnit($body, $unit) {
         $sections = $unit->children();
         $name = $unit['name'];
-        $unit_html = '<div class="module"><h1>'.$name.'</h1><div class="page">';
+        $unit_html = '<div class="module unit" id="'.$name.'"><h1>'.$name.'</h1>';
         
         foreach($sections as $section) {
+            $unit_html = $unit_html.'<div class="page">';
             $unit_html = buildUnitBody($unit_html, $section);
+            $unit_html = $unit_html.'</div>';
         }
 
-        return $body.$unit_html.'</div><div class="controls"><Button class="quiz1">Unit 1 Quiz</Button><Button class="previousPage">Previous Page</Button><Button class="nextPage">Next Page</Button></div>';
+        return $body.$unit_html.'<div class="controls"><Button class="previousPage">Previous Page</Button><Button class="nextPage">Next Page</Button></div></div>';
     }
 
     function buildUnitBody($unit_html, $section) {
@@ -70,12 +72,12 @@
     function buildQuiz($body, $quiz) {
         $questions = $quiz->children();
         $name = $quiz['name'];
-        $quiz_html = '<div class="module"><h1>'.$name.'</h1><div class="quiz">';
+        $quiz_html = '<div class="module quiz" id="'.$name.'"><h1>'.$name.'</h1><div class="quiz">';
 
         $idx = 0;
         foreach($questions as $question) {
             $idx++;
-            $question_html = '<form><h4>Question '.$idx.'</h4><div id="correction-q'.$idx.'"></div>';
+            $question_html = '<form answer="'.$question["answer"].'"><h4>Question '.$idx.'<div id="correction-q'.$idx.'"></div></h4>';
             $question_html = $question_html.'<p>'.$question['question'].'</p>';
 
             foreach($question->children() as $option) {
@@ -87,7 +89,7 @@
             $quiz_html = $quiz_html.$question_html;
         }
 
-        return $body.$quiz_html.'</div><div class="quiz-controls"><button id="answers">Get Answers</button><button id="reset">Reset</button></div>';
+        return $body.$quiz_html.'</div><div class="quiz-controls"><button id="answers">Get Answers</button><button id="reset">Reset</button></div></div>';
     }
 
 ?>
