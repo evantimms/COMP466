@@ -1,0 +1,80 @@
+<course name="HTML Course">
+    <unit name="Unit 1">
+        <section>
+            <title>Introduction to Unit 1</title>
+            <content>On a typical webpage, there are three distinct software technologies that define how the webpage looks, feels, and functions. These are known as HTML, CSS, and JS.</content>
+            <content>
+                HTML is a <i>Markup Language</i> that defines the structure of a webpage. CSS and JS (which will be covered in Unit 2) define how a page looks and functions.
+            </content>
+            <content>In this first unit, we will explore some common HTML tags.</content>
+        </section>
+        <section>
+            <title>Basic Tags</title>
+            <subtitle>The Div: &lt;div&gt;&lt;/div&gt; </subtitle>
+            <content>The div is the most basic tag. It is commonly used to help structure a page. It has no special preformatting.</content>
+            <subtitle>The Paragraph: &lt;p&gt;&lt;/p&gt; </subtitle>
+            <content>The paragraph tag is commonly used to display text on a webpage since it uses preformatting. Browsers will add a blank line after a p tag.</content>
+            <subtitle>The Head, Body and Html Tags &lt;html&gt;&lt;/html&gt; &lt;body&gt;&lt;/body&gt; &lt;head&gt;&lt;/head&gt; </subtitle>
+            <content>These elements are used to define the page. Browsers will only process pages that contain a properly formatted HTML tag. All content goes inside this tag.</content>
+            <content>Head tags contain metadata about the page, as well as links to both external and internal sources (such as JS scripts and CSS stylesheets).</content>
+            <content>The body tag contains the actual HTML that will display in the browser window.</content>
+        </section>
+    </unit>
+    <unit name="Unit 2">
+        <section>
+            <title>Introduction to Unit 2</title>
+            <content>In additional to HTML, there are two other software technologies that are at the core of web development. These are CSS and JavaScript.</content>
+            <content>CSS, also called Cascading Style Sheets is not a true programming language, but also a markup language that is similiar to HTML. However, instead of defining how a 
+            webpage is laid out, CSS defines how a webpage looks.</content>
+            <content>
+                JavaScript is the other topic covered in this unit, and it is indeed a full-fledged programming language. JS runs on the client side, and is used to modify a sites behaviour.
+                JS is used for a variety of functions, and is also responsible for sending requests to other websites from a webpage. These requests can do anything from fetch data, to 
+                communicating with a backend server.
+            </content>
+        </section>
+        <section>
+            <title>JavaScript Basics</title>
+            <content>
+                JS is a client-side scripting language that has become the backbone of modern web development. 
+                Developed in the late nineties, JS has evolved over the years to serve a number of functions.
+                Some basic knowledge of programming is assumed for this next section.
+            </content>
+            <content>Javascript can be directly added to a webpage by using the &lt;script&gt;&lt;/script&gt; tag. Inside this Html tag, any type of JavaScript can be written.</content>
+            <content>JavaScript supports variables, loops, strings just like any normal programming langauge.</content>
+            <content>In JS, the console.log method is used to print to the console (found in the inspection tools in most browsers). JavaScript also supports two types of equality checking.</content>
+            <content>Double equal signs are used to compare the values of two variables, and triple equals compares the type and value.</content>
+        </section>
+    </unit>
+    <quiz name="Unit 1 Quiz">
+        <question question="What is the difference between a p and div tag?" answer="a">
+            <option option="a">A P tag adds a blank line after the content.</option>
+            <option option="b">A div tag adds a blank line after the content.</option>
+            <option option="c">None, they are identical.</option>
+        </question>
+         <question question="What tag is required for a browser to render a HTML page?" answer="b">
+            <option option="a">Head</option>
+            <option option="b">Html</option>
+            <option option="c">Body.</option>
+        </question>
+         <question question="What does the li element do?" answer="c">
+            <option option="a">Nothing</option>
+            <option option="b">Adds a strickthrough to the content inside the tag.</option>
+            <option option="c">Adds a bullet point to the content inside a ul tag.</option>
+        </question>
+         <question question="What do h1 - h6 tags do?" answer="c">
+            <option option="a">Italicize the text</option>
+            <option option="b">Shrink the text size</option>
+            <option option="c">Bold and increase the text size.</option>
+        </question>
+         <question question="What is the difference between a pasword and text input?" answer="a">
+            <option option="a">The password input hides the text from the user as it is entered.</option>
+            <option option="b">The password input encrypts the text.</option>
+            <option option="c">Nothing.</option>
+        </question>
+         <question question="What element defines a section that accepts user input?" answer="b">
+            <option option="a">p</option>
+            <option option="b">Form</option>
+            <option option="c">Body</option>
+        </question>
+    </quiz>
+</course>

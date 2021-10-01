@@ -33,12 +33,30 @@ function getUserBookmarks () {
         bookmarks.forEach(bookmark => {
             if (bookmark.length) {
                 const li = document.createElement('li')
-                li.appendChild(document.createTextNode(bookmark))
+                const a = document.createElement('a')
+                const deleteButton = document.createElement('button')
+                deleteButton.addEventListener('click', () => deleteBookmark(bookmark))
+                deleteButton.innerText = 'X'
+                deleteButton.style.marginRight = '10px'
+                a.href = bookmark
+                a.appendChild(document.createTextNode(bookmark))
+                li.appendChild(deleteButton)
+                li.appendChild(a)
                 bookmarksList.appendChild(li)
             }
         })
     })
     req.open('GET', `get_user_bookmarks.php`)
+    req.send()
+}
+
+function deleteBookmark (url) {
+    const req = new XMLHttpRequest();
+    req.addEventListener('load', (resp) => {
+        getUserBookmarks()
+        getBookmarks()
+    })
+    req.open('GET', `delete_bookmark.php?url=${url}`)
     req.send()
 }
 
@@ -55,7 +73,7 @@ function addBookmark (url) {
 function setup () {
     document.querySelector('#user-add-bookmark-submit').addEventListener('click', (event) => {
         const url = document.querySelector('#user-add-bookmark-input').value
-        if (url.length && url.match(re).length) {
+        if (url.length && url.match(re)?.length) {
             addBookmark(url)
         } else {
             alert('Please enter a url')

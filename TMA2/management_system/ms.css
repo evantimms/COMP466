@@ -1,0 +1,49 @@
+.course-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course {
+    list-style-type: none;
+}
+
+.course {
+    cursor: pointer;
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.file-upload {
+    margin-top: 40px;
+    display: flex;
+}
+
+#file-upload-submit {
+    width: 60px;
+}
+
+.course-manager {
+    background: #9e9e9e;
+    list-style-type: none;
+    width: 400px;
+    height: 60px;
+    display: flex;
+    box-shadow: 4px 5px 8px #cecece;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.course-controls #delete {
+    margin-left: 20px;
+}
+
+.course:hover {
+    color: #cecece;
+}

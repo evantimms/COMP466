@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../shared/main.css">
+    <link rel="stylesheet" href="shared/main.css">
     <link rel="stylesheet" href="ms.css">
-    <script type="text/javascript" src="./index.js"></script>
     <title>Assignment 2</title>
 </head>
 <body>
@@ -21,17 +20,19 @@
         </div>
         <div class="sub-nav">
             <div class="links">
-                <a class="link sublink active" href="index.php">Home</a>
-                <a class="link sublink" href="upload.php">Upload</a>
+                <a class="link sublink" href="index.php">Home</a>
+                <a class="link sublink active" href="upload.php">Upload</a>
                 <a  class="link sublink" href="manage.php">Manage Courses</a>
             </div>
         </div>
         <div class="content">
-            <div class="course-list-container">
-                <h2>Courses</h2>
-                <div><i>Click on a course to view it. Clicking on a course will load a seperate window.</i></div>
-                <ul class="course-list">
-                </ul>
+            <div class="upload-container">
+                <h2>Upload a New Course</h2>
+                <div><i>Courses should be a single EML file. View the EML structure in the documentation section.</i></div>
+                <div class="file-upload">
+                    <input type="file">
+                    <input type="button" value="Upload" id="file-upload-submit">
+                </div>
             </div>
         </div>
     </div>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../shared/main.css">
     <link rel="stylesheet" href="./bookmark_service.css">
     <script src="./bookmark.js" type="text/javascript"></script>
-    <title>TMA 2</title>
+    <title>Assignment 2</title>
 </head>
 <body>
     <div class="main">
