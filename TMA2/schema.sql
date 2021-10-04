@@ -32,3 +32,4 @@ CREATE TABLE assigned_users (
 );
 
 INSERT INTO users (username, password) VALUES ('TestUser', 'password');
+INSERT INTO users (username, password) VALUES ('TestStudent', 'password');

@@ -1,5 +1,7 @@
 <?php
-    $conn = new mysqli("localhost:3306","root","password","comp466");
+    $host = getenv("mysqlhost");
+    $password = getenv("mysqlpass");
+    $conn = new mysqli($host,"comp466",$password,"comp466");
 
     if ($conn -> connect_errno) {
         echo "Failed to connect to MySQL: " . $conn->connect_error;
@@ -15,7 +17,7 @@
 
     $stmt->execute();
 
-    $result = $stmt->get_result(); // get the mysqli result
+    $result = $stmt->get_result(); // get the     $host = getenv("mysqlhost");
     $user = $result->fetch_assoc(); // fetch data   
 
     session_start();
