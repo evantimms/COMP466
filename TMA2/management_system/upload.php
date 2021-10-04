@@ -1,4 +1,4 @@
-<?php include 'shared/auth.php';?>
+<?php include '../shared/auth.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

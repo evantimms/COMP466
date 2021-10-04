@@ -1,7 +1,7 @@
 <course name="HTML Course">
-    <unit name="Unit 1">
+    <unit name="HTML">
         <section>
-            <title>Introduction to Unit 1</title>
+            <title>Introduction to HTML</title>
             <content>On a typical webpage, there are three distinct software technologies that define how the webpage looks, feels, and functions. These are known as HTML, CSS, and JS.</content>
             <content>
                 HTML is a <i>Markup Language</i> that defines the structure of a webpage. CSS and JS (which will be covered in Unit 2) define how a page looks and functions.
@@ -19,33 +19,28 @@
             <content>Head tags contain metadata about the page, as well as links to both external and internal sources (such as JS scripts and CSS stylesheets).</content>
             <content>The body tag contains the actual HTML that will display in the browser window.</content>
         </section>
-    </unit>
-    <unit name="Unit 2">
         <section>
-            <title>Introduction to Unit 2</title>
-            <content>In additional to HTML, there are two other software technologies that are at the core of web development. These are CSS and JavaScript.</content>
-            <content>CSS, also called Cascading Style Sheets is not a true programming language, but also a markup language that is similiar to HTML. However, instead of defining how a 
-            webpage is laid out, CSS defines how a webpage looks.</content>
+            <title>Forms</title>
             <content>
-                JavaScript is the other topic covered in this unit, and it is indeed a full-fledged programming language. JS runs on the client side, and is used to modify a sites behaviour.
-                JS is used for a variety of functions, and is also responsible for sending requests to other websites from a webpage. These requests can do anything from fetch data, to 
-                communicating with a backend server.
+                Forms are the primary way of entering information into a webpage. A form element is used to define the form itself, and a number of different inputs can be used 
+                to aquire information from the user.
+            </content>
+            <subtitle>Input Tags</subtitle>
+            <content>Input tags are basic elements which can accept many different forms of data from a user, wether that be words, numbers, dates etc. These are often used in applications such as login forms.</content>
+            <content>Examples of types include:</content>
+            <content>
+                <ul>
+                    <li>Text: Any ASCII backed text.</li>
+                    <li>Password: Any ASCII backed text, but input is masked.</li>
+                    <li>Date: A Date.</li>
+                    <li>Radio: A radio button, which the option to be checked or unchecked.</li>
+                    <li>File: A file upload link can be used to send files from a local computer to a server.</li>
+                    <li>Tel: A telephone number.</li>
+                </ul>
             </content>
         </section>
-        <section>
-            <title>JavaScript Basics</title>
-            <content>
-                JS is a client-side scripting language that has become the backbone of modern web development. 
-                Developed in the late nineties, JS has evolved over the years to serve a number of functions.
-                Some basic knowledge of programming is assumed for this next section.
-            </content>
-            <content>Javascript can be directly added to a webpage by using the &lt;script&gt;&lt;/script&gt; tag. Inside this Html tag, any type of JavaScript can be written.</content>
-            <content>JavaScript supports variables, loops, strings just like any normal programming langauge.</content>
-            <content>In JS, the console.log method is used to print to the console (found in the inspection tools in most browsers). JavaScript also supports two types of equality checking.</content>
-            <content>Double equal signs are used to compare the values of two variables, and triple equals compares the type and value.</content>
-        </section>
     </unit>
-    <quiz name="Unit 1 Quiz">
+    <quiz name="Quiz">
         <question question="What is the difference between a p and div tag?" answer="a">
             <option option="a">A P tag adds a blank line after the content.</option>
             <option option="b">A div tag adds a blank line after the content.</option>

@@ -63,8 +63,10 @@ function deleteBookmark (url) {
 function addBookmark (url) {
     const req = new XMLHttpRequest();
     req.addEventListener('load', (resp) => {
-        getUserBookmarks()
-        getBookmarks()
+        if (resp.target.status === 200) {
+            getUserBookmarks()
+            getBookmarks()
+        }
     })
     req.open('GET', `add_bookmark.php?url=${url}`)
     req.send()

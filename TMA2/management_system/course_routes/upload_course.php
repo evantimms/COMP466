@@ -1,4 +1,6 @@
 <?php
+    include '../../shared/auth.php';
+
     $conn = new mysqli("localhost:3306","root","password","comp466");
     if ($conn -> connect_errno) {
         echo "Failed to connect to MySQL: " . $conn->connect_error;
@@ -14,8 +16,8 @@
     try {
         $xml = simplexml_load_string($contents);
         $course_name = $xml['name'];
-        $stmt = $conn->prepare("INSERT INTO courses (course_title, content) VALUES (?, ?)");
-        $stmt->bind_param("ss", $course_name, $contents);
+        $stmt = $conn->prepare("INSERT INTO courses (course_title, content, creator_id) VALUES (?, ?, ?)");
+        $stmt->bind_param("ssi", $course_name, $contents, $user_id);
         $stmt->execute();
         $course_id = $conn->insert_id;
         $stmt = $conn->prepare("INSERT INTO assigned_users (course_id, user_id) VALUES (?, ?)");

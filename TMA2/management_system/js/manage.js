@@ -83,7 +83,7 @@ function setup() {
             userReq.send()
         }
     })
-    courseReq.open('GET', 'course_routes/get_courses.php')
+    courseReq.open('GET', 'course_routes/get_managed_courses.php')
     courseReq.send()
 }
 

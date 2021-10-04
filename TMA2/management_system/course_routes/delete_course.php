@@ -1,4 +1,6 @@
 <?php
+    include '../../shared/auth.php';
+
     $conn = new mysqli("localhost:3306","root","password","comp466");
     if ($conn -> connect_errno) {
         echo "Failed to connect to MySQL: " . $conn->connect_error;

@@ -1,0 +1,77 @@
+<course name="JS/CSS Course">
+    <unit name="Intro">
+     <section>
+            <title>Introduction to CSS/JS</title>
+            <content>In additional to HTML, there are two other software technologies that are at the core of web development. These are CSS and JavaScript.</content>
+            <content>CSS, also called Cascading Style Sheets is not a true programming language, but also a markup language that is similiar to HTML. However, instead of defining how a 
+            webpage is laid out, CSS defines how a webpage looks.</content>
+            <content>
+                JavaScript is the other topic covered in this unit, and it is indeed a full-fledged programming language. JS runs on the client side, and is used to modify a sites behaviour.
+                JS is used for a variety of functions, and is also responsible for sending requests to other websites from a webpage. These requests can do anything from fetch data, to 
+                communicating with a backend server.
+            </content>
+        </section>
+    </unit>
+    <unit name="CSS">
+        <section>
+            <title>CSS</title>
+            <content>
+                CSS files contain items called <i>selectors</i> which apply a style to an element on the page. There are a vareity of ways to select an element on a page.
+                Most commonly, CSS selectors will select based on either the classname or the id of an element. A classname offers a more broad selection, meaning multiple styles can be applied
+                to the same element. A selection based on an id will only affect the element with that id.
+            </content>
+        </section>
+    </unit>
+    <unit name="JS">
+        <section>
+            <title>JavaScript Basics</title>
+            <content>
+                JS is a client-side scripting language that has become the backbone of modern web development. 
+                Developed in the late nineties, JS has evolved over the years to serve a number of functions.
+                Some basic knowledge of programming is assumed for this next section.
+            </content>
+            <content>Javascript can be directly added to a webpage by using the &lt;script&gt;&lt;/script&gt; tag. Inside this Html tag, any type of JavaScript can be written.</content>
+            <content>JavaScript supports variables, loops, strings just like any normal programming langauge.</content>
+            <content>In JS, the console.log method is used to print to the console (found in the inspection tools in most browsers). JavaScript also supports two types of equality checking.</content>
+            <content>Double equal signs are used to compare the values of two variables, and triple equals compares the type and value.</content>
+        </section>
+        <section>
+            <title>JavaScript and the DOM</title>
+            <content>
+                The DOM is crucial for performing page interactions with JavaScript. The DOM (Document Object Model) is a representation of the html on a page.
+                It can be used to interact with elements, add event listeners, and a host more options.
+            </content>
+            <content>
+                When embedded in a page, JS has access to the <i>document</i> object. The querySelector method can be used to select elements (using a style familiar to our CSS selectors).
+                For example, the code below selects all elements with the .sublink class, and adds an event listener which, when the element is clicked, will call two functions, fetchPage and
+                setActiveLink
+            </content>
+            <content>
+                Event listeners are crucial for performing interactions with a webpage during runtime. The click event will call what is known as a callback function that is run when the
+                element experiences a click event.
+            </content>
+        </section>
+    </unit>
+    <quiz name="JS/CSS Quiz">
+        <question question="What are the two additional software technologies use to develop websites?" answer="a">
+            <option option="a">Html and CSS</option>
+            <option option="b">Go and Microservices</option>
+            <option option="c">C++ and IDEs</option>
+        </question>
+         <question question="What is the CSS selector which adds extra space outside the element?" answer="b">
+            <option option="a">Padding</option>
+            <option option="b">Margin</option>
+            <option option="c">Background</option>
+        </question>
+         <question question="How would you select all elements with the class 'myElement' in CSS?" answer="c">
+            <option option="a">myElement</option>
+            <option option="b">#myElement</option>
+            <option option="c">.myElement</option>
+        </question>
+         <question question="What is the difference between the double and triple equal signs in JS?" answer="c">
+            <option option="a">Double equal signs are used to compare the values of two variables, and triple equals compares the type and value.</option>
+            <option option="b">Nothing.</option>
+            <option option="c">Triple equal signs are used to compare the values of two variables, and double equals compares the type and value.</option>
+        </question>
+    </quiz>
+</course>

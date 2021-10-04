@@ -1,5 +1,5 @@
 <?php
-
+    include '../shared/auth.php';
     function parse($str) {
         $out = 
         $root = simplexml_load_string($str);
