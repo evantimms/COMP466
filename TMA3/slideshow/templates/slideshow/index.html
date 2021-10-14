@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href={% static 'main.css' %}>
+    <link rel="stylesheet" href={% static 'slideshow/slideshow.css' %}
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <script type="text/javascript" src={% static 'slideshow/main.js' %}></script>
     <title>Assignment 3</title>
@@ -21,6 +22,24 @@
             </div>
         </div>
         <div class="content">
+            <div class="slideshow-application">
+                <h2>Slideshow Application</h2>
+                <div class="slideshow-transition-selector">
+                    <label for="transitions">Choose a transition:</label>
+                    <select id="transition-selector" name="transitions">
+                        <option value="none">Sequential</option>
+                        <option value="fade">Random</option>
+                    </select>
+                </div>
+                <canvas id="canvas" class="slideshow-container" width="900" height="600">
+                    Your browser does not support Canvas
+                </canvas>
+                <div id="caption"></div>
+                <div class="slideshow-controls">
+                    <button value="previous">Previous</button>
+                    <button value="next">Next</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

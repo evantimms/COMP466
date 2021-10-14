@@ -5,4 +5,4 @@ from visitcounter import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
