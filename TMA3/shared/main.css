@@ -1,0 +1,174 @@
+html, body {
+    height: 100%;
+    background-color: rgb(240, 240, 240);
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #1087d6;
+    padding: 2px 5px;
+    box-shadow: 4px 5px 8px #cecece;
+    color: rgb(240, 240, 240);
+    padding: 5px 15px;
+}
+
+.sub-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    background-color: #9e9e9e;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+    margin-top: -5px;
+    box-shadow: 4px 5px 8px #cecece;
+    color: rgb(240, 240, 240);
+    padding: 5px 15px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.links .link {
+    font-size: 18px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.links .link.active {
+    color: rgb(190, 190, 190);
+    pointer-events: none;
+}
+
+.links .link:hover {
+    color: rgb(190, 190, 190);
+}
+
+.links .sublink {
+    margin: 0 10px;
+}
+
+.documentation-divider {
+    width: 90%;
+    height: 1px;
+    background-color: rgb(139, 139, 139);
+    margin: 40px 0;
+    align-self: center;
+}
+
+.content {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+}
+
+.documentation {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-self: center;
+}
+
+.documentation .documentation-title {
+    font-size: 20px;
+    margin: 7px 5px;
+    align-self: center;
+}
+
+.documentation-section {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+.documentation-section .documentation-subtitle {
+    font-weight: 600;
+}
+
+.user-form {
+    height: 500px;
+    min-width: 200px;
+    width: 600px;
+    align-self: center;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    background-color: #1087d6;
+    box-shadow: 4px 5px 8px #cecece;
+    border-radius: 6px;
+}
+
+.user-form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+}
+
+.user-input {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 0;
+    align-items: center;
+    width: 100%;
+}
+
+.user-input label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.user-form .user-input input {
+    width: 75%;
+    height: 35px;
+    border: none;
+    border: none;
+}
+
+.user-form  .user-submit {
+    color: white;
+    background-color: rgb(73, 73, 73);
+    font-weight: 600;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    margin-top: 10px;
+}
+
+.user-controls a {
+    font-size: 18px;
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.user-controls a:hover {
+    color: rgb(190, 190, 190);
+}
