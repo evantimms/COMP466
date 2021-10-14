@@ -33,7 +33,8 @@ ALLOWED_HOSTS = []
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'shared/'),
-    os.path.join(BASE_DIR, 'visitcounter/static/')
+    os.path.join(BASE_DIR, 'visitcounter/static/'),
+    os.path.join(BASE_DIR, 'slideshow/static/')
 ]
 
 # Application definition
@@ -60,13 +61,13 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'TMA3.urls'
 
 
-VISIT_COUNTER_DIR = os.path.join(BASE_DIR, 'visitcounter/')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR,
-            VISIT_COUNTER_DIR
+            os.path.join(BASE_DIR, 'visitcounter/templates'),
+            os.path.join(BASE_DIR, 'slideshow/templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
