@@ -20,8 +20,9 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('visitcounter/', include('visitcounter.urls')),
-    path('slideshow/', include('slideshow.urls')),
-    path('computerstore/', include('computerstore.urls')),
+    path('part1/', include('part1.urls')),
+    path('part2/', include('part2.urls')),
+    path('part3/', include('part3.urls')),
+    path('part4/', include('part4.urls')),
     path('admin/', admin.site.urls),
 ]

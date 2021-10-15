@@ -39,8 +39,10 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'shared/'),
-    os.path.join(BASE_DIR, 'visitcounter/static/'),
-    os.path.join(BASE_DIR, 'slideshow/static/')
+    os.path.join(BASE_DIR, 'part1/static/'),
+    os.path.join(BASE_DIR, 'part2/static/'),
+    os.path.join(BASE_DIR, 'part3/static/'),
+    os.path.join(BASE_DIR, 'part4/static/')
 ]
 
 # Application definition
@@ -52,11 +54,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'slideshow',
-    'visitcounter',
-    'computerstore',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'part1',
+    'part2',
+    'part3',
+    'part4'
 ]
 
 MIDDLEWARE = [
@@ -78,8 +81,10 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR,
-            os.path.join(BASE_DIR, 'visitcounter/templates'),
-            os.path.join(BASE_DIR, 'slideshow/templates')
+            os.path.join(BASE_DIR, 'part1/templates'),
+            os.path.join(BASE_DIR, 'part2/templates'),
+            os.path.join(BASE_DIR, 'part3/templates'),
+            os.path.join(BASE_DIR, 'part4/templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
