@@ -1,13 +1,11 @@
 from django.urls import include, path
-from rest_framework import routers
 from . import views
 
-router = routers.DefaultRouter()
-router.register(r'images', views.ImageListViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('', include(router.urls)),
-    # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('images/', views.images),
+    path('image_meta/<int:pk>/', views.image_meta),
+    path('download/<int:pk>/', views.download_image),
 ]

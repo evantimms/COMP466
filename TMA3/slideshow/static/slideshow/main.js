@@ -1,68 +1,101 @@
-const MIN_IDX = 0
-const MAX_IDX = 19
+const MIN_IDX = 1
+const MAX_IDX = 20
 
-let currentPhotoIdx = 0
+let currentPhotoIdx = 1
 let currentTransition = 'seq'
 
-
-
-async function getNextImage (data) {
-    const metadata = data[currentPhotoIdx]
-    const { title, location } = metadata
-
-    const url =  new URL('http://localhost:8000/slideshow/api/image')
-    const params = { idx: currentPhotoIdx }
-    url.search = new URLSearchParams(params).toString()
-
-    caption = data[currentPhotoIdx].caption
-    canvas = document.querySelector('#canvas')
-    context = canvas.getContext('2d')
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(image, 0, 0, canvas.width, canvas.height)
+function drawImage (blob, caption) {
+    const img = new Image()
+    const canvas = document.querySelector('#canvas')
+    const context = canvas.getContext('2d')
+    context.clearRect(0, 0, canvas.width, canvas.height)
+    img.onload = () => {
+        context.drawImage(img, 0, 0, canvas.width, canvas.height)
+    }
+    img.src = URL.createObjectURL(blob)
     document.querySelector('#caption').innerText = caption
-
 }
 
-
-async function handleImage () {
-    const url =  new URL('http://localhost:8000/slideshow/api/images/')
-
+async function getTitle () {
+    const url =  new URL(`http://localhost:8000/slideshow/api/image_meta/${currentPhotoIdx}/`)
     const resp = await fetch(url, {
         method: 'GET'
     })
-    if (resp.ok) {
-        data = await resp.json()
-        getNextImage(data)
+
+    const data = await resp.json()
+    return data.title
+}
+
+async function download () {
+    const url =  new URL(`http://localhost:8000/slideshow/api/download/${currentPhotoIdx}/`)
+    const resp = await fetch(url, {
+        method: 'GET'
+    })
+
+    const blob = await resp.blob()
+    return blob
+}
+
+async function getImage () {
+    try {
+        const title = await getTitle()
+        const blob = await download()
+        drawImage(blob, title)
+    } catch (err) {
+        console.log(err)
+        alert('Server error has occured')
+    }
+}
+
+function handleChangeIdx (val) {
+    const old = currentPhotoIdx
+    if (val === 'previous' && currentPhotoIdx > MIN_IDX) {
+        currentPhotoIdx--;
+    } else if (val === 'next' && currentPhotoIdx < MAX_IDX) {
+        currentPhotoIdx++;
+    } else if (val === 'random') {
+        currentPhotoIdx =  Math.floor(Math.random() * (MAX_IDX + 1))
+    }
+
+    if (old !== currentPhotoIdx) {
+        getImage()
+    }
+}
+
+function handleTransitionChange () {
+    const nextBtn = document.querySelector('#next-btn')
+    const prevBtn = document.querySelector('#prev-btn')
+    const randBtn = document.querySelector('#rand-btn')
+
+    if (currentTransition === 'seq') {
+        nextBtn.style.display = ''
+        prevBtn.style.display = ''
+        randBtn.style.display = 'none'
     } else {
-        alert('Shits fucked')
+        randBtn.style.display = ''
+        nextBtn.style.display = 'none'
+        prevBtn.style.display = 'none'
     }
 }
 
 function setup () {
     document.querySelectorAll('button').forEach(button => {
         button.addEventListener('click', (event) => {
-            if (event.target.value === 'previous') {
-                if (currentPhotoIdx > MIN_IDX) {
-                    currentPhotoIdx--;
-                }
-            } else {
-                if (currentPhotoIdx >= MAX_IDX) {
-                    currentPhotoIdx = 0
-                } else {
-                    currentPhotoIdx++;   
-                }
-            }
-            handleImage()
+            handleChangeIdx(event.target.value)
         })
     })
 
-    transitionSelector = document.querySelector('#transition-selector')
-
-    transitionSelector.addEventListener('change', (selection) => {
-        currentTransition = transitionSelector.value
+    document.getElementById('transition-selector').addEventListener('change', (event) => {
+        currentTransition = event.target.value
+        handleTransitionChange()
     })
 
-    handleImage()
+    document.querySelector('#transition-selector').addEventListener('change', (selection) => {
+        currentTransition = selection.value
+    })
+
+    handleTransitionChange()
+    getImage()
 }
 
 
