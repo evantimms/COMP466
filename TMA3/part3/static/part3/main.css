@@ -52,7 +52,7 @@
 }
 
 .computer-list-btn:hover {
-    color: #1087d6;
+    color: #414a7a;
 }
 
 .computer-list-details {
@@ -128,7 +128,7 @@
 }
 
 #fetch-components-btn:hover, #store-cart-btn:hover {
-    color: #1087d6;
+    color: #414a7a;
 }
 
 .store-selector-components {
@@ -162,7 +162,7 @@
 }
 
 .component-select:hover {
-    color: #1087d6;
+    color: #414a7a;
 }
 
 .component-name {
@@ -188,4 +188,44 @@
     height: 25px;
     margin-top: 10px;
     font-size: 15px;
+}
+
+.contact-form-container {
+    width: 80%;
+    align-self: center;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form-container h3 {
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-input {
+    height: 40px;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.contact-textarea {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.contact-submit {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    align-self: center;
+}
+
+.submit-confirm {
+    color: rgb(83, 197, 83);
 }

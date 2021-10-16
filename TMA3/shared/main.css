@@ -1,6 +1,5 @@
 html, body {
     height: 100%;
-    background-color: rgb(240, 240, 240);
 }
 
 body {
@@ -19,7 +18,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    background-color: #1087d6;
+    background-color: #414a7a;
     padding: 2px 5px;
     box-shadow: 4px 5px 8px #cecece;
     color: rgb(240, 240, 240);
@@ -64,6 +63,11 @@ body {
 
 .links .sublink {
     margin: 0 10px;
+}
+
+.links .sublink.right {
+    position: absolute;
+    right: 0;
 }
 
 .documentation-divider {
@@ -114,7 +118,7 @@ body {
     margin-top: 60px;
     display: flex;
     justify-content: center;
-    background-color: #1087d6;
+    background-color: #414a7a;
     box-shadow: 4px 5px 8px #cecece;
     border-radius: 6px;
 }

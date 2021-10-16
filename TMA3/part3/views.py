@@ -39,6 +39,9 @@ def customize(request, id):
 def parts(request):
     return render(request, 'part3/parts.html')
 
+def contact(request):
+    return render(request, 'part3/contact.html')
+
 @csrf_exempt
 def cart(request):
     cart_str = request.body.decode('utf-8')
