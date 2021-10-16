@@ -10,6 +10,8 @@
     <script type="module" src={% static 'part3/js/api.js'%}></script> 
     <script type="module" src={% static 'part3/js/helpers.js'%}></script> 
     <script type="module" src={% static 'part3/js/customize.js'%}></script> 
+    {{ computer|json_script:"computer" }}
+    {{ all_components|json_script:"all_components" }}
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <title>Assignment 3</title>
 </head>
@@ -29,17 +31,18 @@
         <div class="content">
             <div class="store-banner">
                 <h2>Customize Your {{computer.name}}</h2>
+                <button id="store-cart-btn">Add to Cart</button>
             </div>
-            <div class="store-price">Current Price: ${{computer.price}}</div>
+            <div class="store-price">Current Price: $<span>{{computer.price}}</span></div>
             <div class="store">
                 <div class="store-selected">
-                    <div class="store-selected-item">CPU: {{selected_components.cpu.name}}</div>
-                    <div class="store-selected-item">Graphics: {{selected_components.graphics.name}}</div>
-                    <div class="store-selected-item">Ram: {{selected_components.ram.name}}</div>
-                    <div class="store-selected-item">Hard Drive: {{selected_components.hardDrive.name}}</div>
-                    <div class="store-selected-item">OS: {{selected_components.os.name}}</div>
-                    <div class="store-selected-item">Display: {{selected_components.display.name}}</div>
-                    <div class="store-selected-item">Sound Card: {{selected_components.soundCard.name}}</div>
+                    <div class="store-selected-item">CPU: <span>{{selected_components.cpu.name}}</span></div>
+                    <div class="store-selected-item">Graphics: <span>{{selected_components.graphics.name}}</span></div>
+                    <div class="store-selected-item">Hard Drive: <span>{{selected_components.hardDrive.name}}</span></div>
+                    <div class="store-selected-item">Ram: <span>{{selected_components.ram.name}}</span></div>
+                    <div class="store-selected-item">OS: <span>{{selected_components.os.name}}</span></div>
+                    <div class="store-selected-item">Display: <span>{{selected_components.display.name}}</span></div>
+                    <div class="store-selected-item">Sound Card: <span>{{selected_components.soundCard.name}}</span></div>
                 </div>
                 <div class="store-selector">
                     <div class="store-selector-controls">

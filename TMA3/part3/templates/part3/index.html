@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href={% static 'main.css' %}>
     <link rel="stylesheet" href={% static 'part3/main.css' %}>
+    <script type="module" src={% static 'part3/js/helpers.js'%}></script> 
+    <script type="module" src={% static 'part3/js/main.js'%}></script> 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <title>Assignment 3</title>
 </head>
@@ -22,7 +24,7 @@
             <div class="links">
                 <a class="link sublink" href="computers">Completed Builds</a>
                 <a class="link sublink" href="parts">Part Viewer</a>
-                <a class="link sublink" href="cart">Cart</a>
+                <a class="link sublink" id="cart">Cart</a>
                 <a class="link sublink" href="orders">Orders</a>
             </div>
         </div>

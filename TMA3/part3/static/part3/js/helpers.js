@@ -37,3 +37,57 @@ export const buildComponentList = async (buildInfoUIFn) => {
         compList.appendChild(root)
     })
 }
+
+export const addToCart = (computer) => {
+    const cookie = getCookie('cart')
+    let cart
+    if (!cookie) {
+        cart = []
+        computer.index = 0
+    } else {
+        cart = JSON.parse(cookie)
+        computer.index = cart.length + 1
+    }
+    
+    cart.push(computer)
+    setCookie('cart', JSON.stringify(cart), 365)
+}
+
+export const removeFromCart = (id) => {
+    const cookie = getCookie('cart')
+    if (!cookie) {
+        return
+    }
+
+    let cart = JSON.parse(cookie)
+    const newCart = []
+    cart.forEach(c => {
+        if (c.index !== id) {
+            newCart.push(c)
+        }
+    })
+    setCookie('cart', JSON.stringify(newCart), 365)
+}
+
+
+export const setCookie = (cname, cvalue, exdays) => {
+    const d = new Date()
+    d.setTime(d.getTime() + (exdays*24*60*60*1000))
+    let expires = 'expires='+ d.toUTCString()
+    document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
+}
+
+export const getCookie = (cname) => {
+    let name = cname + '='
+    let decodedCookie = decodeURIComponent(document.cookie)
+    let ca = decodedCookie.split(';')
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i]
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1)
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length)
+        }
+    }
+}

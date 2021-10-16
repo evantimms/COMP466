@@ -12,9 +12,7 @@ REQUIREMENTS:
 11. Users should be able to provide feedback
 12. Users should be able to contact the site
 
-TODO: 
-1. Customize Finish
-2. Price Change
+TODO:
 3. Cart
 4. Order
-5. 
+5. Contact

@@ -37,7 +37,18 @@ def get_components_for_computer(id):
         for component in all_components[key]:
             if component['id'] == computer['components'][key]:
                 components[key] = component
+    print(components)
     return components
+
+def get_component_details(components):
+    all_components = get_components()
+    component_details = {}
+    for key in components.keys():
+        for candidate in all_components[key]:
+            if candidate['id'] == components[key]:
+                component_details[key] = candidate
+    
+    return component_details
 
 if __name__ == '__main__':
     # print(get_computers())

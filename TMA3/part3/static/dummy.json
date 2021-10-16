@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Sabre X300",
-            "price": 499.99,
+            "price": 1219.99,
             "components": {
                 "cpu": 2,
                 "graphics": 1,
@@ -17,7 +17,7 @@
         {   
             "id": 2,
             "name": "Sabre X500",
-            "price": 899.99,
+            "price": 1519.99,
             "components": {
                 "cpu": 3,
                 "graphics": 4,
@@ -31,7 +31,7 @@
         {
             "id": 3,
             "name": "XGame Super",
-            "price": 1899.99,
+            "price": 2049.99,
             "components": {
                 "cpu": 3,
                 "graphics": 5,
@@ -45,7 +45,7 @@
         {   
             "id": 4,
             "name": "Sabre X1000",
-            "price": 1299.99,
+            "price": 1829.99,
             "components": {
                 "cpu": 3,
                 "graphics": 4,
@@ -59,7 +59,7 @@
         {
             "id": 5,
             "name": "XGame Basic",
-            "price": 399.99,
+            "price": 1019.99,
             "components": {
                 "cpu": 1,
                 "graphics": 1,
@@ -73,7 +73,7 @@
         {
             "id": 6,
             "name": "Metroid Prime",
-            "price": 2999.99,
+            "price": 3669.99,
             "components": {
                 "cpu": 4,
                 "graphics": 6,
