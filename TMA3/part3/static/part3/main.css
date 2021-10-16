@@ -177,3 +177,15 @@
 .component-description {
     margin-left: 50px;
 }
+
+.cart-price {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.order-btn {
+    max-width: 100px;
+    height: 25px;
+    margin-top: 10px;
+    font-size: 15px;
+}

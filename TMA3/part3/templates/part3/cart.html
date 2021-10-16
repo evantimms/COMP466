@@ -28,6 +28,7 @@
         <div class="content">
             <div class="computer-list">
                 <div class="cart-price">Total Price: <span>${{ total_price }}</span></div>
+                <button class="order-btn" id="order">Order Items</button>
                 {% if cart_info %}
                     {% for info in cart_info %}
                         <div class="computer-list-item" id={{info.computer.index}}>
@@ -54,7 +55,6 @@
                             </div>
                             <div class="computer-list-controls">
                                 <a class="computer-list-btn remove">Remove from Cart</a>
-                                <a class="computer-list-btn order">Order</a>
                             </div>
                         </div>
                     {% endfor %}

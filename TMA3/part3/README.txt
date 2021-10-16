@@ -13,6 +13,5 @@ REQUIREMENTS:
 12. Users should be able to contact the site
 
 TODO:
-3. Cart
 4. Order
 5. Contact

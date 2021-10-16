@@ -61,6 +61,3 @@ def cart(request):
         'total_price': total_price
     }
     return HttpResponse(template.render(context, request))
-
-def orders(request):
-    return render(request, 'part3/orders.html')

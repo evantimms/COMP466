@@ -172,8 +172,3 @@ body {
 .user-controls a:hover {
     color: rgb(190, 190, 190);
 }
-
-.cart-price {
-    font-weight: bold;
-    font-size: 18px;
-}

@@ -69,7 +69,6 @@ export const removeFromCart = (id) => {
     setCookie('cart', JSON.stringify(newCart), 365)
 }
 
-
 export const setCookie = (cname, cvalue, exdays) => {
     const d = new Date()
     d.setTime(d.getTime() + (exdays*24*60*60*1000))
