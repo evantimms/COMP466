@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
-from part3.api.api import get_computers, get_components_for_computer
+from part3.api.api import *
 
 
 def index(request):
@@ -22,8 +22,15 @@ def computers(request):
     }
     return HttpResponse(template.render(context, request))
 
-def customize(request):
-    return render(request, 'part3/customize.html')
+def customize(request, id):
+    computer = get_computer(id)
+    selected_components = get_components_for_computer(id)
+    template = loader.get_template('part3/customize.html')
+    context = { 
+        'computer': computer,
+        'selected_components': selected_components
+    }
+    return HttpResponse(template.render(context, request))
 
 def parts(request):
     return render(request, 'part3/parts.html')

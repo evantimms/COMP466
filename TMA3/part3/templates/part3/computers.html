@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href={% static 'main.css' %}>
     <link rel="stylesheet" href={% static 'part3/main.css' %}>
-    <script type="module" src={% static 'part3/js/data.js'%}></script> 
-    <script type="module" src={% static 'part3/js/api.js'%}></script> 
-    <script type="module" src={% static 'part3/js/computers.js'%}></script> 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <title>Assignment 3</title>
 </head>
@@ -31,7 +28,7 @@
             <div class="computer-list">
                 {% if computer_info %}
                     {% for info in computer_info %}
-                        <div id={{ info.computer.id }} class="computer-list-item">
+                        <div class="computer-list-item">
                             <div class="computer-list-info">
                                 <div class="computer-list-title">{{info.computer.name}}</div>
                                 <div class="computer-list-price">${{info.computer.price}}</div>
@@ -54,11 +51,10 @@
                                 </div>
                             </div>
                             <div class="computer-list-controls">
-                                <div class="computer-list-btn">Customize</div>
-                                <div class="computer-list-btn">Add to Cart</div>
+                                <a class="computer-list-btn" href="./customize/{{info.computer.id}}">Customize</a>
+                                <a class="computer-list-btn" href="/api/cart_add/{{info.computer.id}}">Add to Cart</a>
                             </div>
                         </div>
-                        
                     {% endfor %}
                 {% else %}
                     <p>No computers are avaliable</p>

@@ -48,6 +48,7 @@
     font-weight: 600;
     cursor: pointer;
     width: 150px;
+    text-decoration: none;
 }
 
 .computer-list-btn:hover {
@@ -73,4 +74,106 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+}
+
+/* STORE */
+
+.store {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.store-price {
+    border-bottom: 1px solid #b1b1b1;
+    padding-bottom: 15px;
+    font-weight: 600px;
+    font-size: 24px;
+    margin: 0 20px;
+    margin-bottom: 20px;
+
+}
+
+.store-selected {
+    height: 400px;
+}
+
+.store-selector {
+    margin-right: 100px;
+}
+
+.store-selector-controls {
+    margin-top: 10px;
+}
+
+.store-selected-item {
+    margin: 10px 0;
+    margin-left: 20px;
+    padding: 20px 50px;
+    font-size: 20px;
+    border: 1px solid black;
+}
+
+#category-select {
+    border: none;
+    font-size: 20px;
+}
+
+#fetch-components-btn {
+    padding: 1px 10px;
+    border: none;
+    background: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#fetch-components-btn:hover {
+    color: #1087d6;
+}
+
+.store-selector-components {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.component {
+    color: #eeeeee;
+    margin: 10px 0;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    background: #b1b1b1;
+    box-shadow: 4px 5px 8px #cecece;
+}
+
+.component-select {
+    border: none;
+    background: #b1b1b1;
+    color: #eeeeee;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 5px;
+}
+
+.component-select:hover {
+    color: #1087d6;
+}
+
+.component-name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.component-select {
+    margin-top: 5px;
+}
+
+.component-description {
+    margin-left: 50px;
 }

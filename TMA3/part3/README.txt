@@ -11,3 +11,10 @@ REQUIREMENTS:
 10. Users should be able to view ordered computers
 11. Users should be able to provide feedback
 12. Users should be able to contact the site
+
+TODO: 
+1. Customize Finish
+2. Price Change
+3. Cart
+4. Order
+5. 
