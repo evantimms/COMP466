@@ -30,18 +30,39 @@
                 </h3>
                 <span class="submit-confirm"></span>
                 <form class="contact-form" onsubmit="return false">
-                    <input class="contact-input" type="text" placeholder="Enter a email or phone #">
+                    <input class="contact-input" type="email" placeholder="Enter a email or phone #">
                     <input class="contact-input" type="text" placeholder="Subject">
                     <textarea class="contact-textarea"></textarea>
                     <input type="submit" class="contact-submit">
                 </form>
+            </div>
+            <div style="align-self: center; margin-top: 20px;">
+                <p>If you wish to contact us directly, you can find our contact information below:</p>
+                <div>Phone: 999-999-1111</div>
+                <div>Address: 1 King Street, Toronto, ON</div>
+                <div>M7K 0A1</div>
             </div>
         </div>
     </div>
 </body>
 <script type="text/javascript">
     document.querySelector('.contact-submit').addEventListener('click', () => {
-        document.querySelector('.submit-confirm').innerText = 'Thank you for submitting!'
+        let valid = true
+        document.querySelectorAll('.contact-input').forEach(input => {
+            if (!input.value.length) {
+                valid = false
+            }
+        })
+        if (!document.querySelector('.contact-textarea').value) {
+            valid = false
+        }
+
+        if (!valid) {
+            document.querySelector('.submit-confirm').innerText = 'Please properly fill out the form'
+        } else {
+            document.querySelector('.submit-confirm').innerText = 'Thank you for submitting!'
+        }
+        
     })
 </script>
 </html>
