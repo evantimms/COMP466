@@ -3,3 +3,74 @@
     flex-direction: column;
     align-items: center;
 }
+
+/* COMPUTER LIST */
+
+.computer-list {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 5px;
+}
+
+.computer-list-info {
+    width: 200px;
+}
+
+.computer-list-item {
+    background: #b1b1b1;
+    box-shadow: 4px 5px 8px #cecece;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    margin: 15px 0;
+}
+
+.computer-list-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #eeeeee;
+    margin-bottom: 10px;
+}
+
+.computer-list-price {
+    color: #eeeeee;
+    font-weight: 600;
+}
+
+.computer-list-btn {
+    margin: 0 5px;
+    border: none;
+    font-size: 18px;
+    background: #b1b1b1;
+    color: #eeeeee;
+    font-weight: 600;
+    cursor: pointer;
+    width: 150px;
+}
+
+.computer-list-btn:hover {
+    color: #1087d6;
+}
+
+.computer-list-details {
+    display: flex;
+    flex-direction: row;
+}
+
+.computer-list-details-section {
+    margin: 0 20px;
+}
+
+.computer-detail {
+    font-size: 16px;
+    color: #eeeeee;
+    margin: 15px 0;
+}
+
+.computer-list-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}

@@ -9,3 +9,5 @@ REQUIREMENTS:
 8. Users should be able to view a summary of a computer added to a cart
 9. Users should be able to order a computer
 10. Users should be able to view ordered computers
+11. Users should be able to provide feedback
+12. Users should be able to contact the site
