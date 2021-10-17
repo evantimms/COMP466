@@ -28,7 +28,6 @@ def get_computers():
 
 def get_computer(id):
     spec = ComputerSpecs.objects.filter(pk=id)[0]
-    print(spec)
     return buildComputerObj(spec)
 
 def get_components():
@@ -41,7 +40,6 @@ def get_components():
         'display': list(Display.objects.values()),
         'soundCard': list(SoundCard.objects.values()),
     }
-    print(res)
     return res
 
 def get_components_for_computer(id):

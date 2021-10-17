@@ -1,9 +1,5 @@
-const getComputerList = () => {}
-
-const getComputer = (id) => {}
-
 const getComponents = async () => {
-    const url = new URL(`http://localhost:8000/part4/api/components`)
+    const url = new URL('http://localhost:8000/part4/api/components')
     const resp = await fetch(url)
     if (resp.ok) {
         return resp.json()
@@ -13,8 +9,21 @@ const getComponents = async () => {
     }
 }
 
-const getComponent = (category, id) => {}
+const createUser = async (params) => {
+    const url = new URL('http://localhost:8000/part4/api/auth/create')
+    const resp = await fetch(url, {
+        method: 'POST',
+        type: 'application/json',
+        body: JSON.stringify(params)
+    })
 
-const getUserCart = () => {}
+    if (resp.ok) {
+        console.log('created')
+        // window.location.assign(resp.url)
+    } else {
+        alert('Backend error occured.')
+        console.error(resp, resp.status)
+    }
+}
 
-export { getComputerList, getComputer, getComponents, getComponent, getUserCart }
+export { getComponents, createUser }
