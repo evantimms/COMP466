@@ -1,4 +1,5 @@
-import { clearlist, buildComponentList, addToCart } from './helpers.js'
+import { clearlist, buildComponentList } from './helpers.js'
+import { addToCart } from './api.js'
 
 let computer, allComponents
 

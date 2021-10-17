@@ -1,3 +1,4 @@
+import { loadCart } from "./main.js"
 import { addToCart } from "./helpers.js"
 
 const setup = () => {
@@ -5,7 +6,7 @@ const setup = () => {
         const computers = JSON.parse(document.getElementById('computers').textContent)
         const selectedId = btn.parentElement.parentElement.id
         addToCart(computers.find(c => c.id === parseInt(selectedId)))
-        alert('Added to cart!')
+        loadCart()
     }))
 }
 

@@ -8,7 +8,6 @@ REQUIREMENTS:
 
 
 TODO:
-1. DB - Done
-2. Auth
 3. Remove Cookie
 4. Orders
+5. Recover password

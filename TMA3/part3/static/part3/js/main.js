@@ -9,7 +9,7 @@ const cartPageSetup = () => {
     }))
 }
 
-const loadCart = async () => {
+export const loadCart = async () => {
     let cart = getCookie('cart')
     if (!cart) {
         cart = JSON.stringify([])
@@ -32,11 +32,6 @@ const loadCart = async () => {
         alert('Backend error')
     }
 }
-
-const loadOrders = async () => {
-    
-}
-
 const setup = () => {
     document.getElementById('cart').addEventListener('click', () => {
         loadCart()

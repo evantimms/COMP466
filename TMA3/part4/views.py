@@ -61,18 +61,8 @@ def cart(request):
     if not request.user.is_authenticated:
         return redirect('./login')
 
-    cart_str = request.body.decode('utf-8')
-    cart = json.loads(cart_str)
-    cart_info = []
-    total_price = 0
-    for computer in cart:
-        components = get_component_details(computer['components'])
-        cart_info.append({
-            'components': components,
-            'computer': computer
-        })
-        total_price += computer['price']
-    total_price = round(total_price, 2)
+    user = request.user
+    cart_info, total_price = get_user_cart(user)
 
     template = loader.get_template('part4/cart.html')
     context = {
@@ -87,6 +77,3 @@ def create(request):
 
 def login(request):
     return render(request, 'part4/login.html')
-
-def logout(request):
-    pass

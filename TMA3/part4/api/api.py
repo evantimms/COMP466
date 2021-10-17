@@ -1,7 +1,5 @@
-import os
-import json
 from part4.models import *
-from TMA3.settings import BASE_DIR
+
 
 def buildComputerObj(spec):
     obj = {}
@@ -27,7 +25,7 @@ def get_computers():
     return res
 
 def get_computer(id):
-    spec = ComputerSpecs.objects.filter(pk=id)[0]
+    spec = ComputerSpecs.objects.filter(computer__id=id)[0]
     return buildComputerObj(spec)
 
 def get_components():
@@ -61,3 +59,73 @@ def get_component_details(components):
                 component_details[key] = candidate
     
     return component_details
+
+def create_new_computer(selected):
+    computer_name = selected['name']
+    computer_price = selected['price']
+    components = selected['components']
+
+    #1. Create the computer
+    computer = Computer.objects.create(
+        name=computer_name,
+        price=computer_price,
+    )
+
+    #2. Create the spec
+    cpu_id = components['cpu']
+    graphics_id = components['graphics']
+    hard_drive_id = components['hardDrive']
+    ram_id = components['ram']
+    os_id = components['os']
+    display_id = components['display']
+    sound_card_id = components['soundCard']
+
+    ComputerSpecs.objects.create(
+        computer=computer,
+        cpu=Cpu.objects.filter(pk=cpu_id)[0],
+        graphics_card=GraphicsCard.objects.filter(pk=graphics_id)[0],
+        hard_drive=HardDrive.objects.filter(pk=hard_drive_id)[0],
+        ram=Ram.objects.filter(pk=ram_id)[0],
+        os=Os.objects.filter(pk=os_id)[0],
+        display=Display.objects.filter(pk=display_id)[0],
+        sound_card=SoundCard.objects.filter(pk=sound_card_id)[0],
+    )
+
+    return computer
+
+def assign_computer_user_cart(user, computer):
+    su = StoreUser.objects.filter(user__id=user.id)[0]
+    cart = Cart.objects.filter(store_user__id=su.id)[0]
+    computer.cart = cart
+    computer.save()
+
+    cart.total_price = round(cart.total_price + computer.price, 2)
+    cart.save()
+
+def delete_computer_from_cart(computer_id):
+    to_delete = Computer.objects.filter(pk=computer_id)[0]
+    cart = Cart.objects.filter(pk=to_delete.cart.id)[0]
+    cart.total_price =  round(cart.total_price - to_delete.price, 2)
+
+    if (cart.total_price <= 1):
+        cart.total_price = 0
+
+
+    cart.save()
+    to_delete.delete()
+
+def get_user_cart(user):
+    su = StoreUser.objects.filter(user__id=user.id)[0]
+    cart = Cart.objects.filter(store_user__id=su.id)[0]
+    computers = Computer.objects.filter(cart__id=cart.id)
+    formatted_cart = []
+    for computer in computers:
+        components = get_components_for_computer(computer.id)
+        formatted_cart.append({
+            'id': computer.id,
+            'name': computer.name,
+            'price': computer.price,
+            'components': components
+        })
+
+    return formatted_cart, cart.total_price

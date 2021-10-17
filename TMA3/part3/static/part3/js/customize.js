@@ -1,4 +1,5 @@
 import { clearlist, buildComponentList, addToCart } from './helpers.js'
+import { loadCart } from './main.js'
 
 let computer, allComponents
 
@@ -57,7 +58,7 @@ const setup = () => {
     document.querySelector('#store-cart-btn')
         .addEventListener('click', (event) => {
             addToCart(computer)
-            alert('Added to cart!')           
+            loadCart()     
         })
         
     buildComponentList(buildInfoUI)

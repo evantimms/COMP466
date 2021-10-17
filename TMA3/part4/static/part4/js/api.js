@@ -41,4 +41,39 @@ const login = async (username, password) => {
     }
 }
 
+export const addToCart = async (computer) => {
+    const url = new URL('http://localhost:8000/part4/api/cart/add')
+    const resp = await fetch(url, {
+        method: 'POST',
+        type: 'application/json',
+        body: JSON.stringify(computer)
+    })
+
+    if (resp.ok) {
+        window.location.assign(resp.url)
+    } else {
+        console.error(resp, resp.status)
+    }
+}
+
+export const removeFromCart = async (id) => {
+    const url = new URL('http://localhost:8000/part4/api/cart/remove')
+    url.searchParams.append('id', id)
+    const resp = await fetch(url)
+
+    if (resp.ok) {
+        window.location.assign(resp.url)
+    } else {
+        console.error(resp, resp.status)
+    }
+}
+
+export const placeOrder = async (computer) => {
+
+}
+
+export const cancelOrder = async (id) => {
+
+}
+
 export { getComponents, createUser, login }

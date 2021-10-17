@@ -1,3 +1,4 @@
+import json
 from django.http import JsonResponse, HttpResponseRedirect, HttpResponse, HttpResponseForbidden
 from part4.api.api import *
 from django.views.decorators.csrf import csrf_exempt
@@ -55,3 +56,27 @@ def create_user(request):
     create_new_store_user(user)
 
     return HttpResponseRedirect(redirect_to='../../')
+
+@csrf_exempt
+def add_computer_cart(request):
+    body = request.body.decode('utf-8')
+    selected = json.loads(body)
+    user = request.user
+
+    computer = create_new_computer(selected)
+    assign_computer_user_cart(user, computer)
+
+    return HttpResponseRedirect(redirect_to='../../cart')
+
+def remove_computer_cart(request):
+    computer_id = request.GET.get('id', '')
+    delete_computer_from_cart(computer_id)
+    return HttpResponseRedirect(redirect_to='../../cart')
+
+
+@csrf_exempt
+def create_order():
+    pass
+
+def cancel_order():
+    pass
