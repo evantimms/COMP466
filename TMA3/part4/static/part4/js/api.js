@@ -68,12 +68,27 @@ export const removeFromCart = async (id) => {
     }
 }
 
-export const placeOrder = async (computer) => {
+export const placeOrder = async () => {
+    const url = new URL('http://localhost:8000/part4/api/orders/create')
+    const resp = await fetch(url)
 
+    if (resp.ok) {
+        window.location.assign(resp.url)
+    } else {
+        console.error(resp, resp.status)
+    }
 }
 
 export const cancelOrder = async (id) => {
+    const url = new URL('http://localhost:8000/part4/api/orders/cancel')
+    url.searchParams.append('id', id)
+    const resp = await fetch(url)
 
+    if (resp.ok) {
+        window.location.assign(resp.url)
+    } else {
+        console.error(resp, resp.status)
+    }
 }
 
 export { getComponents, createUser, login }

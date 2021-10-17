@@ -129,3 +129,48 @@ def get_user_cart(user):
         })
 
     return formatted_cart, cart.total_price
+
+def create_user_order(user):
+    su = StoreUser.objects.filter(user__id=user.id)[0]
+    computers = Computer.objects.filter(cart__store_user__id=su.id)
+    cart = Cart.objects.filter(store_user__id=su.id)[0]
+    order = Order.objects.filter(store_user__id=su.id)[0]
+    for computer in computers:
+        computer.cart = None
+        computer.order = order
+        computer.save()
+
+    order.total_price += cart.total_price
+    cart.total_price = 0
+    order.save()
+    cart.save()
+
+
+def delete_computer_from_order(computer_id):
+    to_delete = Computer.objects.filter(pk=computer_id)[0]
+    order = Order.objects.filter(pk=to_delete.order.id)[0]
+    order.total_price =  round(order.total_price - to_delete.price, 2)
+
+    if (order.total_price <= 1):
+        order.total_price = 0
+
+
+    order.save()
+    to_delete.delete()
+
+
+def get_user_orders(user):
+    su = StoreUser.objects.filter(user__id=user.id)[0]
+    orders = Order.objects.filter(store_user__id=su.id)[0]
+    computers = Computer.objects.filter(order__id=orders.id)
+    formatted_orders = []
+    for computer in computers:
+        components = get_components_for_computer(computer.id)
+        formatted_orders.append({
+            'id': computer.id,
+            'name': computer.name,
+            'price': computer.price,
+            'components': components
+        })
+    
+    return formatted_orders, orders.total_price

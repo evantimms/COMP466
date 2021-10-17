@@ -56,7 +56,6 @@ def contact(request):
         return redirect('./login')
     return render(request, 'part4/contact.html')
 
-@csrf_exempt
 def cart(request):
     if not request.user.is_authenticated:
         return redirect('./login')
@@ -71,6 +70,20 @@ def cart(request):
     }
     return HttpResponse(template.render(context, request))
 
+def orders(request):
+    if not request.user.is_authenticated:
+        return redirect('./login')
+
+    user = request.user
+    orders, total_price = get_user_orders(user)
+    print(orders)
+    template = loader.get_template('part4/orders.html')
+    context = {
+        'order_info': orders,
+        'total_price': total_price
+    }
+
+    return HttpResponse(template.render(context, request))
 
 def create(request):
     return render(request, 'part4/create.html')

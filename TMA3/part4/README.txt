@@ -5,9 +5,3 @@ REQUIREMENTS:
 4. Users should be able to view the details of an order
 5. Users should be able to delete orders
 6. Users should be able to edit orders
-
-
-TODO:
-3. Remove Cookie
-4. Orders
-5. Recover password

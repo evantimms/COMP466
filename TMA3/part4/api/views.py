@@ -74,9 +74,12 @@ def remove_computer_cart(request):
     return HttpResponseRedirect(redirect_to='../../cart')
 
 
-@csrf_exempt
-def create_order():
-    pass
+def create_order(request):
+    user = request.user
+    create_user_order(user)
+    return HttpResponseRedirect(redirect_to='../../orders')
 
-def cancel_order():
-    pass
+def cancel_order(request):
+    computer_id = request.GET.get('id', '')
+    delete_computer_from_order(computer_id)
+    return HttpResponseRedirect(redirect_to='../../orders')
