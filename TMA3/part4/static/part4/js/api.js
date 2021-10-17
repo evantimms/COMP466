@@ -18,12 +18,27 @@ const createUser = async (params) => {
     })
 
     if (resp.ok) {
-        console.log('created')
-        // window.location.assign(resp.url)
+        window.location.assign(resp.url)
     } else {
         alert('Backend error occured.')
         console.error(resp, resp.status)
     }
 }
 
-export { getComponents, createUser }
+const login = async (username, password) => {
+    const url = new URL('http://localhost:8000/part4/api/auth/login')
+    url.searchParams.append('username', username)
+    url.searchParams.append('password', password)
+    const resp = await fetch(url)
+
+    if (resp.ok) {
+        window.location.assign(resp.url)
+    } else if (resp.status === 403) {
+        return 'Incorrect username or password.'
+    } else {
+        console.error(resp, resp.status)
+        return 'Unable to log in.'
+    }
+}
+
+export { getComponents, createUser, login }

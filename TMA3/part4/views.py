@@ -3,12 +3,19 @@ from django.shortcuts import render
 from django.template import loader
 from part4.api.api import *
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import redirect
 
 
 def index(request):
+    if not request.user.is_authenticated:
+        return redirect('./login')
+
     return render(request, 'part4/index.html')
 
 def computers(request):
+    if not request.user.is_authenticated:
+        return redirect('./login')
+
     computer_info = []
     computers = get_computers()
     for computer in computers:
@@ -25,6 +32,9 @@ def computers(request):
     return HttpResponse(template.render(context, request))
 
 def customize(request, id):
+    if not request.user.is_authenticated:
+        return redirect('../login')
+
     computer = get_computer(id)
     selected_components = get_components_for_computer(id)
     all_components = get_components()
@@ -37,13 +47,20 @@ def customize(request, id):
     return HttpResponse(template.render(context, request))
 
 def parts(request):
+    if not request.user.is_authenticated:
+        return redirect('./login')
     return render(request, 'part4/parts.html')
 
 def contact(request):
+    if not request.user.is_authenticated:
+        return redirect('./login')
     return render(request, 'part4/contact.html')
 
 @csrf_exempt
 def cart(request):
+    if not request.user.is_authenticated:
+        return redirect('./login')
+
     cart_str = request.body.decode('utf-8')
     cart = json.loads(cart_str)
     cart_info = []

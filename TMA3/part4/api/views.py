@@ -1,8 +1,9 @@
-from django.http import JsonResponse, HttpResponseRedirect
+from django.http import JsonResponse, HttpResponseRedirect, HttpResponse, HttpResponseForbidden
 from part4.api.api import *
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from part4.models import Cart, Order, StoreUser
+from django.contrib.auth import authenticate, login, logout
 
 
 def components(request):
@@ -10,20 +11,24 @@ def components(request):
     return JsonResponse(components, safe=False)
 
 
-def login(request):
-    print('Hit')
-
-    return HttpResponse('User created')
-
-
-def logout(request):
-    print('Hit')
-
-    return HttpResponse('User created')
-
-
-
 # AUTH
+def login_user(request):
+    username = request.GET.get('username', None)
+    password = request.GET.get('password', None)
+    print(username, password)
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return HttpResponseRedirect(redirect_to='../../')
+    else:
+        return HttpResponseForbidden('Unable to login')
+
+
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect(redirect_to='../../login')
+
+
 def create_new_user_db(params):
     user = User.objects.create_user(
         params['userName'],

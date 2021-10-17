@@ -7,13 +7,6 @@ const validEmail = (email) => {
 
 const setup = () => {
     document.querySelector('#create').addEventListener('click', () => {
-        const params = {
-            'firstName': '',
-            'lastName': '',
-            'email': '',
-            'username': '',
-            'password': ''
-        }
         const firstName = document.getElementById('first-name').value
         const lastName = document.getElementById('last-name').value
         const userName = document.getElementById('user-name').value
