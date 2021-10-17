@@ -80,8 +80,9 @@ class ComputerSpecs(models.Model):
     os = models.ForeignKey(Os, on_delete=models.CASCADE)
     display = models.ForeignKey(Display, on_delete=models.CASCADE)
     sound_card = models.ForeignKey(SoundCard, on_delete=models.CASCADE)
-    cart = models.ForeignKey(Cart, on_delete=models.DO_NOTHING)
-    order = models.ForeignKey(Order, on_delete=models.DO_NOTHING)
+    default = models.BooleanField(default=False)
+    cart = models.ForeignKey(Cart, on_delete=models.DO_NOTHING, blank=True, null=True)
+    order = models.ForeignKey(Order, on_delete=models.DO_NOTHING, blank=True, null=True)
 
     def __str__(self):
         return self.computer.name
