@@ -28,10 +28,8 @@ SECRET_KEY = 'django-insecure-1cw%x3o4b+z2e*5)czx5js_wt9dk%7pzcrjy)f&v&z_&whi80_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 # CORS
-ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

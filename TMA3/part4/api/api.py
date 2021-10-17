@@ -1,5 +1,6 @@
 import os
 import json
+from part4.models import *
 from TMA3.settings import BASE_DIR
 
 # TODO: Replace with model interaction in P4
