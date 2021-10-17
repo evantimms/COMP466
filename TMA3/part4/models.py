@@ -26,6 +26,9 @@ class StoreUser(models.Model):
 class Computer(models.Model):
     name = models.CharField(max_length=256)
     price = models.FloatField()
+    default = models.BooleanField(default=False)
+    cart = models.ForeignKey(Cart, on_delete=models.DO_NOTHING, blank=True, null=True)
+    order = models.ForeignKey(Order, on_delete=models.DO_NOTHING, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -41,6 +44,7 @@ class Component(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Cpu(Component):
     def __str__(self):
@@ -80,9 +84,6 @@ class ComputerSpecs(models.Model):
     os = models.ForeignKey(Os, on_delete=models.CASCADE)
     display = models.ForeignKey(Display, on_delete=models.CASCADE)
     sound_card = models.ForeignKey(SoundCard, on_delete=models.CASCADE)
-    default = models.BooleanField(default=False)
-    cart = models.ForeignKey(Cart, on_delete=models.DO_NOTHING, blank=True, null=True)
-    order = models.ForeignKey(Order, on_delete=models.DO_NOTHING, blank=True, null=True)
 
     def __str__(self):
         return self.computer.name

@@ -49,7 +49,6 @@ def cart(request):
     cart_info = []
     total_price = 0
     for computer in cart:
-        print(computer)
         components = get_component_details(computer['components'])
         cart_info.append({
             'components': components,
