@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-1cw%x3o4b+z2e*5)czx5js_wt9dk%7pzcrjy)f&v&z_&whi80_
 DEBUG = True
 
 # CORS
-ALLOWED_HOSTS = ['138.197.129.164']
+ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -68,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'TMA3.middleware.AddCorsAll'
 ]
 
 ROOT_URLCONF = 'TMA3.urls'
