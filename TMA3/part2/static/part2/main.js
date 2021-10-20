@@ -1,4 +1,4 @@
-const BACKEND_URL = 'http://localhost:8000'
+const BACKEND_URL = 'http://143.110.215.138'
 
 const MIN_IDX = 1
 const MAX_IDX = 20

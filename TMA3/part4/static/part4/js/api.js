@@ -1,4 +1,4 @@
-const BACKEND_URL = 'http://localhost:8000'
+const BACKEND_URL = 'http://143.110.215.138'
 
 const getComponents = async () => {
     const url = new URL(`${BACKEND_URL}/part4/api/components`)
