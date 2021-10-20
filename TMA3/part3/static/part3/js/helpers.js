@@ -28,7 +28,7 @@ export const buildComponentList = async (buildInfoUIFn) => {
         const desc = document.createElement('div')
         desc.classList.add('component-description')
 
-        desc.innerText = component.description
+        desc.innerText = component.desc
 
         const infoComps = buildInfoUIFn(component)
         infoComps.forEach(infoComp => compinfo.appendChild(infoComp))
