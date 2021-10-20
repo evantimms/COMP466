@@ -1,3 +1,4 @@
+import { BACKEND_URL } from './api.js'
 import { getCookie, removeFromCart } from './helpers.js'
 
 const cartPageSetup = () => {
@@ -15,7 +16,7 @@ export const loadCart = async () => {
         cart = JSON.stringify([])
     }
 
-    const resp = await fetch(new URL('http://localhost:8000/part3/cart'), {
+    const resp = await fetch(new URL(`${BACKEND_URL}/part3/cart`), {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

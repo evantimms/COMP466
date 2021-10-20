@@ -1,9 +1,7 @@
-const getComputerList = () => {}
-
-const getComputer = (id) => {}
+const BACKEND_URL = 'http://localhost:8000'
 
 const getComponents = async () => {
-    const url = new URL(`http://localhost:8000/part3/api/components`)
+    const url = new URL(`${BACKEND_URL}/part3/api/components`)
     const resp = await fetch(url)
     if (resp.ok) {
         return resp.json()
@@ -13,8 +11,4 @@ const getComponents = async () => {
     }
 }
 
-const getComponent = (category, id) => {}
-
-const getUserCart = () => {}
-
-export { getComputerList, getComputer, getComponents, getComponent, getUserCart }
+export { getComponents, BACKEND_URL }

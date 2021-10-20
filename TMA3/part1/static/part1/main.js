@@ -28,7 +28,7 @@ function incrementCounter () {
         counterEl.innerText = newVal
         setCookie('counter', newVal, 365)
     } else {
-        setCookie('counter', 0, 365)
+        setCookie('counter', 1, 365)
     }
 }
 

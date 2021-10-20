@@ -1,5 +1,7 @@
+const BACKEND_URL = 'http://localhost:8000'
+
 const getComponents = async () => {
-    const url = new URL('http://localhost:8000/part4/api/components')
+    const url = new URL(`${BACKEND_URL}/part4/api/components`)
     const resp = await fetch(url)
     if (resp.ok) {
         return resp.json()
@@ -10,7 +12,7 @@ const getComponents = async () => {
 }
 
 const createUser = async (params) => {
-    const url = new URL('http://localhost:8000/part4/api/auth/create')
+    const url = new URL(`${BACKEND_URL}/part4/api/auth/create`)
     const resp = await fetch(url, {
         method: 'POST',
         type: 'application/json',
@@ -26,7 +28,7 @@ const createUser = async (params) => {
 }
 
 const login = async (username, password) => {
-    const url = new URL('http://localhost:8000/part4/api/auth/login')
+    const url = new URL(`${BACKEND_URL}/part4/api/auth/login`)
     url.searchParams.append('username', username)
     url.searchParams.append('password', password)
     const resp = await fetch(url)
@@ -42,7 +44,7 @@ const login = async (username, password) => {
 }
 
 export const addToCart = async (computer) => {
-    const url = new URL('http://localhost:8000/part4/api/cart/add')
+    const url = new URL(`${BACKEND_URL}/part4/api/cart/add`)
     const resp = await fetch(url, {
         method: 'POST',
         type: 'application/json',
@@ -57,7 +59,7 @@ export const addToCart = async (computer) => {
 }
 
 export const removeFromCart = async (id) => {
-    const url = new URL('http://localhost:8000/part4/api/cart/remove')
+    const url = new URL(`${BACKEND_URL}/part4/api/cart/remove`)
     url.searchParams.append('id', id)
     const resp = await fetch(url)
 
@@ -69,7 +71,7 @@ export const removeFromCart = async (id) => {
 }
 
 export const placeOrder = async () => {
-    const url = new URL('http://localhost:8000/part4/api/orders/create')
+    const url = new URL(`${BACKEND_URL}/part4/api/orders/create`)
     const resp = await fetch(url)
 
     if (resp.ok) {
@@ -80,7 +82,7 @@ export const placeOrder = async () => {
 }
 
 export const cancelOrder = async (id) => {
-    const url = new URL('http://localhost:8000/part4/api/orders/cancel')
+    const url = new URL(`${BACKEND_URL}/part4/api/orders/cancel`)
     url.searchParams.append('id', id)
     const resp = await fetch(url)
 

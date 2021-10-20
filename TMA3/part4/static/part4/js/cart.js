@@ -6,7 +6,12 @@ const setup = () => {
         removeFromCart(computerId)
     }))
 
-    document.getElementById('order').addEventListener('click', placeOrder)
+    document.getElementById('order').addEventListener('click', () => {
+        const current = document.querySelectorAll('.computer-list-item')
+        if (current.length > 0) {
+            placeOrder()
+        }
+    })
 }
 
 window.onload = setup

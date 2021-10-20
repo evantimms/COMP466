@@ -22,20 +22,162 @@
         </div>
         <div class="content">
             <div class="documentation">
-                <div class="documentation-title">Evan Timms - COMP 466</div>
+                <div class="documentation-title">Evan Timms () - COMP 466</div>
                 <div class="documentation-title">Assignment 3</div>
                 <div class="documentation-title">Begin Date: 10/14/2021</div>
-                <div class="documentation-title">End Date: 10/16/2021</div>
-                <div class="documentation-title">Est Hours: 25</div>
-                <h3>LINK: #########</h3>
+                <div class="documentation-title">End Date: 10/19/2021</div>
+                <div class="documentation-title">Est Hours: 28</div>
                 <span class="documentation-divider"></span>
                 <div class="documentation-section">
-                    <div class="documentation-subtitle">Description</div>
+                    <div class="documentation-subtitle">Introduction</div>
+                    <span class="documentation-subdivider"></span>
+                    <p>
+                        The final assignment of COMP466 required me to develop 4 web applications. The first of these
+                        web applications is a frontend application that would use cookies to track how many times a user visited the 
+                        application, in addition to displaying their IP address and timezone.
+                    </p>
+                    <p>
+                        The second web application is similiar to assignment 1. This application would run a slideshow, using a 
+                        list of pictures stored on the server. It includes buttons to start and stop the slideshow, and change the
+                        transition from a sequential ordering to a random one.
+                    </p>
+                    <p>
+                        The third and fourth parts revolve around building a computer store. This store contains a multitude of 
+                        features. Users are able to browse existing models, look up specific parts (such as graphics and Cpus) and then select
+                        and customize that computer. The customization allows a user to change any number of components to either more expensive or different
+                        ones. The price is then updated dynamically as a user modifies their system. 
+                    </p>
+                    <p>
+                        Finally, a user can add a computer to a cart, which can be removed.  
+                        In part 3, the design required me to not use a database, but rather hardcoded values. Part 4 extended this basic system by adding
+                        a database, user authentication, and orders.
+                    </p>
                 </div>
                 <div class="documentation-section">
-                    <div class="documentation-subtitle">Design</div>
+                    <div class="documentation-subtitle">Part 1</div>
+                    <span class="documentation-subdivider"></span>
+                    <p>
+                        To initially set up the application, I used a Django project and configured it to contain four seperate applications,
+                        contained within the folders part1, part2, part3 and part4. In part1, a single Django view is used to serve index.html, which
+                        contains a basic html page with a top bar for navigation back home. This is setup in Django by defining a proper route.
+                    </p>
+                    <p>
+                        Routing in Django is done via adding a pattern to urls.py, which the Django engine matches with the incoming request. In views.py,
+                        Django requests are handled with a corresponding function. For part 1, this simply returned a HTML page when when /part1 is requested.
+                    </p>
+                    <p>
+                        On the frontend, I use a simple JS script to make a external call to an open source ip (api.ipify.org) which retrieves a users IP.
+                        I also use a built in library to retrieve the users timezone.
+                    </p>
+                    <p>
+                        Finally, I store a cookie containing a simple counter. Every time the user revists the page, I check the cookie, create one if not present,
+                        and then increment the counter. The counter is displayed to the user by modifying the HTML.
+                    </p>
+                </div>
                 <div class="documentation-section">
-                    <div class="documentation-subtitle">User Guide</div>
+                    <div class="documentation-subtitle">Part 2</div>
+                    <span class="documentation-subdivider"></span>
+                    <p>
+                        Part 2 is setup akin to part 1. I also have defined a seperate REST api which handles interactions with images. 
+                        This decouples the views from the actual fetching of data (which is a pattern I resuse in part 3 and 4). 
+                    </p>
+                    <p>
+                        Again, a single Django view is defined which returns a basic HTML page. This page contains a couple buttons which are made
+                        functional by another additional JS script. This is a simple script so I will not spend much time on it, but sufice to say
+                        I use the JS setInterval / clearIntervals function to control stopping and starting the show. When a new image is selected, two
+                        get requests are sent to the backend, which fetches the image meta data and downloads the image itself.
+                    </p>
+                <div class="documentation-section">
+                    <div class="documentation-subtitle">Part 3</div>
+                    <span class="documentation-subdivider"></span>
+                    <p>
+                        For part 3, I attempted to model the UX flow of Amazon. On Amazon, there exists a list of products that you can select for 
+                        more information. Once a user has selected a product, they can sometimes customize it (change color, size etc). Finally, users can add items
+                        to their cart, and then are able to view their cart. Items in their cart can be deleted, and the price updates dynamically.
+                    </p>
+                    <p>
+                        Instead of a grid, I opted for rows of computers as it is easier to display component information.
+                    </p>
+                    <p>
+                        <b>Amazon product list example:</b>
+                    </p>
+                    <img src={% static 'part3/amazon1.PNG' %} width="600" height="700">
+                    <p>
+                        <b>Amazon details screen:</b>
+                    </p>
+                    <img src={% static 'part3/amazon2.PNG' %} width="600" height="700">
+                    <p>
+                        Below is a diagram of the website in part 3. It contains a homepage 
+                        , a computers listing page, a details page, and a cart page. This will be updated again in P4. I have also included
+                        The general flow a user can take while visiting the site (indicated by the arrows).
+                    </p>
+                    <img src={% static 'part3/p3.PNG' %} width="1200" height="800">
+                    <p>
+                        Since part 3 required me to hardcode data rather than use a DB, I kept the data within a JSON file that I read via
+                        a set of functions in api/api.py. This was the only section of my codebase interacting with data, making the switch
+                        to a DB in part 4 much quicker and simplier.
+                    </p>
+                    <p>
+                        The code for part 3 is laid out as follows: part3/urls.py contain the urls which will return html files.
+                        part3/views.py is responsible for the logic of rendering these files, and in certain views, is required to interact
+                        with the api. The api (part/api/api.py) contains functions which interact with the JSON file, and perform read operations.
+                        This is again updated in part 4 to perform full CRUD ops. part3/static contains all the static files that can be served via
+                        Django's templating engine, and templates contain the actual HTML files.
+                    </p>
+                </div>
+                <div class="documentation-section">
+                    <div class="documentation-subtitle">Part 4</div>
+                    <span class="documentation-subdivider"></span>
+                    <p>
+                        The first step in part 4 was designing a schema. Django provides models to interact with databases instead
+                        of directly working with them, but I have added a schema file called <i>schema.sql</i> which contains the raw sql statements.
+                        Below is an pseudo-ER diagram of the tables. Briefly, the User table is Django's built in user (used primarly for authentication).
+                        The store user contains a reference to the user, and the cart and order tables contain a total price and reference to the store user.
+                        Computers are broken down into two tables. The Computer table contains the name price, and wether it is a default computer or not.
+                        Default computes appear in the store (and non-default ones are assigned to users). Computers can be related to a users cart or order, and 
+                        also have a specification. 
+                    </p>
+                    <p>
+                        The specification table contains references to components, which is an abstract model (non-existent in SQL). 
+                        Instead, there is an individual table for each component, which is referenced by the computer spec. The numbers in the diagram represent the type
+                        of relationship, either 1-1, 1-many, or many-many
+                    </p>
+                    <img src={% static 'part4/P4_ER.PNG' %} width="1200" height="800">
+                    <p>
+                        In this part, I first changed up api.py to use Django's QuerySet API to interact with the models. After replacing 
+                        the old code interacting with the JSON file, I added functionality for creating a computer which is assigned to a user. This would
+                        allow me to populate a user's cart and order.
+                    </p>
+                    <p>
+                        For authentication, I used Django's build in system, which uses the User model. This required me to develop login/signup screens. 
+                        Once a user logs in, they can access all screens in part 4. If a user is not logged in, requests to any path other than /login
+                        or /create are redirected to the login page.
+                    </p>
+                    <p>
+                        The final flow of the website is shown below:
+                    </p>
+                    <img src={% static 'part4/p4.PNG' %} width="1200" height="800">
+                    <p>I also added a contact page which sends me an email from a logged in user.</p>
+                </div>
+                <div class="documentation-section">
+                    <div class="documentation-subtitle">How to Use & Misc</div>
+                    <span class="documentation-subdivider"></span>
+                    <p>
+                        Use the top navigation bar to navigate between each of the assignments (parts 1-4). There are instructions on how to 
+                        use the computer store in parts 3 and 4. For a test user, you can use the following:
+                    </p>
+                    <p>
+                        Username: Testuser
+                    </p>
+                    <p>
+                        Password: pass
+                    </p>
+                    <p>
+                        <b>Important: I have been assured I am allowed to use Django as the backend for this application instead of Java. Please see
+                        below for confirmation.</b>
+                    </p>
+                    <img src={% static 'part4/proof.PNG' %} width="1000" height="600">
+                    <p>If you have any questions feel free to email me.</p>
                 </div>
             </div>
         </div>

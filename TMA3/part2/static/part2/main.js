@@ -1,8 +1,11 @@
+const BACKEND_URL = 'http://localhost:8000'
+
 const MIN_IDX = 1
 const MAX_IDX = 20
 
 let currentPhotoIdx = 1
 let currentTransition = 'seq'
+let show = null
 
 function drawImage (blob, caption) {
     const img = new Image()
@@ -17,7 +20,7 @@ function drawImage (blob, caption) {
 }
 
 async function getTitle () {
-    const url =  new URL(`http://localhost:8000/part2/api/image_meta/${currentPhotoIdx}/`)
+    const url =  new URL(`${BACKEND_URL}/part2/api/image_meta/${currentPhotoIdx}/`)
     const resp = await fetch(url, {
         method: 'GET'
     })
@@ -27,7 +30,7 @@ async function getTitle () {
 }
 
 async function download () {
-    const url =  new URL(`http://localhost:8000/part2/api/download/${currentPhotoIdx}/`)
+    const url =  new URL(`${BACKEND_URL}/part2/api/download/${currentPhotoIdx}/`)
     const resp = await fetch(url, {
         method: 'GET'
     })
@@ -54,7 +57,7 @@ function handleChangeIdx (val) {
     } else if (val === 'next' && currentPhotoIdx < MAX_IDX) {
         currentPhotoIdx++;
     } else if (val === 'random') {
-        currentPhotoIdx =  Math.floor(Math.random() * (MAX_IDX + 1))
+        currentPhotoIdx =  Math.floor(Math.random() * (MAX_IDX))
     }
 
     if (old !== currentPhotoIdx) {
@@ -78,6 +81,20 @@ function handleTransitionChange () {
     }
 }
 
+function startShow () {
+    show = setInterval(() => {
+        if (currentTransition === 'seq') {
+            handleChangeIdx('next')
+        } else {
+            handleChangeIdx('random')
+        }
+    }, 2000)
+}
+
+function stopShow () {
+    clearInterval(show)
+}
+
 function setup () {
     document.querySelectorAll('button').forEach(button => {
         button.addEventListener('click', (event) => {
@@ -90,17 +107,8 @@ function setup () {
         handleTransitionChange()
     })
 
-    document.querySelector('#transition-selector').addEventListener('change', (selection) => {
-        currentTransition = selection.value
-    })
-
-    // document.querySelector('#control-btn').addEventListener('click', (event) => {
-    //     if (event.target.value === 'stop') {
-    //         stopShow()
-    //     } else {
-    //         startShow()
-    //     }
-    // })
+    document.querySelector('#start-show').addEventListener('click', startShow)
+    document.querySelector('#stop-show').addEventListener('click', stopShow)
 
     handleTransitionChange()
     getImage()

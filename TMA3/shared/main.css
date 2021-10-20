@@ -42,6 +42,9 @@ body {
 
 .title {
     font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .links .link {
@@ -70,14 +73,6 @@ body {
     right: 0;
 }
 
-.documentation-divider {
-    width: 90%;
-    height: 1px;
-    background-color: rgb(139, 139, 139);
-    margin: 40px 0;
-    align-self: center;
-}
-
 .content {
     margin: 0 10px;
     display: flex;
@@ -95,7 +90,7 @@ body {
 }
 
 .documentation .documentation-title {
-    font-size: 20px;
+    font-size: 24px;
     margin: 7px 5px;
     align-self: center;
 }
@@ -107,5 +102,23 @@ body {
 }
 
 .documentation-section .documentation-subtitle {
-    font-weight: 600;
+    font-size: 20px;
+}
+
+.documentation-divider {
+    width: 90%;
+    height: 1px;
+    background-color: rgb(139, 139, 139);
+    margin-top: 30px;
+    margin-bottom: 50px;
+    align-self: center;
+}
+
+.documentation-subdivider {
+    width: 70%;
+    height: 1px;
+    background-color: rgb(139, 139, 139);
+    align-self: center;
+    margin: 20px 0;
+
 }

@@ -16,12 +16,14 @@ class Cart(models.Model):
     def __str__(self):
         return 'Cart'
 
+
 class Order(models.Model):
     total_price = models.FloatField(default=0)
     store_user = models.ForeignKey(StoreUser, on_delete=models.CASCADE)
 
     def __str__(self):
         return 'Order'
+
 
 class Computer(models.Model):
     name = models.CharField(max_length=256)

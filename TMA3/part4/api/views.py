@@ -16,7 +16,6 @@ def components(request):
 def login_user(request):
     username = request.GET.get('username', None)
     password = request.GET.get('password', None)
-    print(username, password)
     user = authenticate(username=username, password=password)
     if user is not None:
         login(request, user)
