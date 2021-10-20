@@ -28,12 +28,12 @@ SECRET_KEY = 'django-insecure-1cw%x3o4b+z2e*5)czx5js_wt9dk%7pzcrjy)f&v&z_&whi80_
 DEBUG = True
 
 # CORS
-ALLOWED_HOSTS = ['http://138.197.129.164:8000', 'http://138.197.129.164']
+ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ORIGIN_WHITELIST = (
-    'http://138.197.129.164:8000/',
-    'http://138.197.129.164/'
-)
+# CORS_ORIGIN_WHITELIST = (
+#     'http://138.197.129.164:8000/',
+#     'http://138.197.129.164/'
+# )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
